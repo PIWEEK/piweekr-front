@@ -7,11 +7,22 @@ const sourcemaps = require('gulp-sourcemaps');
 const tsProject = tsc.createProject("tsconfig.json");
 const tslint = require('gulp-tslint');
 const pug = require('gulp-pug');
+const postcss = require('gulp-postcss');
+const cssnext = require('postcss-cssnext');
 
 gulp.task('html', () => {
   return gulp.src('src/**/*.pug')
   .pipe(pug())
   .pipe(gulp.dest("build"));
+});
+
+gulp.task('styles', () => {
+    let processors = [
+        cssnext()
+    ];
+    return gulp.src('src/**/*.css')
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('build'));
 });
 
 /**
@@ -33,7 +44,7 @@ gulp.task('tslint', () => {
 /**
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
-gulp.task("compile", ["html", "tslint"], () => {
+gulp.task("compile", ["html", "styles", "tslint"], () => {
     let tsResult = gulp.src("src/**/*.ts")
         .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
@@ -46,7 +57,7 @@ gulp.task("compile", ["html", "tslint"], () => {
  * Copy all resources that are not TypeScript files into build directory.
  */
 gulp.task("resources", () => {
-    return gulp.src(["src/**/*", "!**/*.pug", "!**/*.ts"])
+    return gulp.src(["src/**/*", "!**/*.pug", "!**/*.css", "!**/*.ts"])
         .pipe(gulp.dest("build"));
 });
 
@@ -73,11 +84,16 @@ gulp.task('watch', function () {
     gulp.watch(["src/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
-    gulp.watch(["src/**/*.html", "src/**/*.css"], ['resources']).on('change', function (e) {
+
+    gulp.watch(["src/resources/**/*"], ['resources']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
-    
+
     gulp.watch(["src/**/*.pug"], ['html']).on('change', function (e) {
+        console.log('Resource file ' + e.path + ' has been changed. Updating.');
+    });
+
+    gulp.watch(["src/**/*.css"], ['styles']).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
 });

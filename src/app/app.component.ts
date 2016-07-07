@@ -7,6 +7,7 @@ import {AboutComponent} from "./about/components/about.components";
 @Component({
     selector: "app",
     templateUrl: "./app/app.html",
+    styleUrls: ["./app/app.component.css"],
     directives: [TaskListComponent, AboutComponent, RouterLink, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
