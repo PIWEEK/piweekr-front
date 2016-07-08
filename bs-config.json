@@ -1,9 +1,15 @@
 {
-  "port": 8000,
-  "files": [
-    "build/**/*.{html,htm,css,js}"
-  ],
-  "server": {
-    "baseDir": "build"
-  }
+    "port": 8000,
+    "files": [
+        "build/**/*.{html,htm,css,js}"
+    ],
+    "logConnections": false,
+    "logLevel": "silent",
+    "logFileChanges": false,
+    "server": {
+        "baseDir": "build",
+        "middleware": {
+            "0": null
+        }
+    }
 }
