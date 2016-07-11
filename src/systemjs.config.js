@@ -4,13 +4,15 @@
     var map = {
         'app': 'app', // 'dist',
         'rxjs': 'lib/rxjs',
-        '@angular': 'lib/@angular'
+        '@angular': 'lib/@angular',
+        'immutable': 'lib/immutable'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app': {main: 'main.js', defaultExtension: 'js'},
-        'rxjs': {defaultExtension: 'js'}
+        'rxjs': {defaultExtension: 'js'},
+        'immutable': {main: 'dist/immutable.min.js'}
     };
 
     var packageNames = [
