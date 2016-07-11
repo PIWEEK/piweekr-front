@@ -9,7 +9,8 @@ const tslint = require('gulp-tslint');
 const pug = require('gulp-pug');
 const postcss = require('gulp-postcss');
 const cssnext = require('postcss-cssnext');
-const cssImport = require('postcss-easy-import')
+const cssImport = require('postcss-easy-import');
+const plumber = require('gulp-plumber');
 
 gulp.task('html', () => {
   return gulp.src('src/**/*.pug')
@@ -24,6 +25,7 @@ gulp.task('styles', () => {
     ];
     return gulp.src('src/**/*.css')
         .pipe(postcss(processors))
+        .pipe(plumber())
         .pipe(gulp.dest('build'));
 });
 

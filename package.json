@@ -40,6 +40,7 @@
     "concurrently": "^2.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
     "gulp-pug": "^3.0.3",
     "gulp-sourcemaps": "^1.6.0",

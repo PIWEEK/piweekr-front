@@ -1,0 +1,23 @@
+/* DO NOT INSERT COMPILABLE CODE IN THIS FILE SINCE IT WILL BE IMPORTED IN EVERY FILE */
+/* ADD ONLY SHARED STYLES ACROSS ALL FILES */
+
+
+/* Variables */
+
+:root {
+    --black: #000000;
+    --gray900: #212121;
+    --gray800: #424242;
+    --gray700: #616161;
+    --gray600: #757575;
+    --gray500: #9E9E9E;
+    --gray400: #BDBDBD;
+    --gray300: #E0E0E0;
+    --gray200: #EEEEEE;
+    --gray100: #F5F5F5;
+    --whitish: #FAFAFA;
+    --white: #FAFAFA;
+    --primary: #ffb093;
+    --primary-dark: color(var(--primary) lightness(20%));
+    --primary-light: color(var(--primary) blackness(20%));
+}
