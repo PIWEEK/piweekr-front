@@ -1,13 +1,11 @@
 /* Avoid: 'error TS2304: Cannot find name <type>' during compilation */
 ///<reference path="../../typings/index.d.ts"/>
 
-import {AppComponent} from "./app.component";
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {provide} from "@angular/core";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
-import {ROUTER_PROVIDERS} from "@angular/router-deprecated";
+import { bootstrap }            from '@angular/platform-browser-dynamic';
+import { HomeComponent }         from './layout/home/home.component';
+import { APP_ROUTER_PROVIDERS } from './router/app.routes';
 
-bootstrap(AppComponent, [
-    ROUTER_PROVIDERS,
-    provide(LocationStrategy, {useClass: HashLocationStrategy})
-]);
+bootstrap(HomeComponent, [
+  APP_ROUTER_PROVIDERS
+])
+.catch(err => console.error(err));
