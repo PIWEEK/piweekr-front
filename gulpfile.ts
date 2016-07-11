@@ -9,6 +9,7 @@ const tslint = require('gulp-tslint');
 const pug = require('gulp-pug');
 const postcss = require('gulp-postcss');
 const cssnext = require('postcss-cssnext');
+const cssImport = require('postcss-easy-import')
 
 gulp.task('html', () => {
   return gulp.src('src/**/*.pug')
@@ -18,6 +19,7 @@ gulp.task('html', () => {
 
 gulp.task('styles', () => {
     let processors = [
+        cssImport(),
         cssnext()
     ];
     return gulp.src('src/**/*.css')

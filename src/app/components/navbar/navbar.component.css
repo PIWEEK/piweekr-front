@@ -1,0 +1,15 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    background: #333;
+    color: #FFF;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 1rem;
+    &:hover {
+        color: pink;
+    }
+}

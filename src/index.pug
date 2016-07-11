@@ -1,9 +1,15 @@
+doctype html
 html
   head
-    title Angular 2 TypeScript Gulp QuickStart Movidas Locas del Jueves
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    // 1. Load libraries
-    // Polyfill(s) for older browsers
+    title Piweekr
+    meta(
+      name='viewport'
+      content='width=device-width, initial-scale=1'
+    )
+    link(
+      rel="stylesheet"
+      href="styles.css"
+    )
     script(src='lib/es6-shim/es6-shim.min.js')
     script(src='lib/zone.js/dist/zone.js')
     script(src='lib/reflect-metadata/Reflect.js')
@@ -12,8 +18,8 @@ html
     script(src='systemjs.config.js')
     script.
       System.import('app')
-      .then(null, console.error.bind(console));
-  // 3. Display the application
+      .catch(function(err){ console.error(err) });
+    base(href="/")
   body
     app
       h1 Loading
