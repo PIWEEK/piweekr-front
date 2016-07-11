@@ -6,10 +6,17 @@
 }
 
 body {
-    background: var(--gray100);
+    background: var(--gray200);
+    font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
 }
 
 a {
     text-decoration: none;
+}
+
+button {
+  background:none;
+  border:none;
+  font-size:1rem;
 }

@@ -1,4 +1,5 @@
 nav.vertical-list
     ul
+        li.title {{type}}
         li(*ngFor="let item of itemsList")
-            a((click)="onSelectItem(item.uuid)", title="{{item.title}}") {{item.title}}
+            a([ngClass]="{'active': selectedItem === item.uuid}", (click)="onSelectItem(item.uuid)", title="{{item.title}}", role="button") {{item.title}}

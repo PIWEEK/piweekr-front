@@ -11,6 +11,7 @@ import {CardContainerComponent} from "../../components/card-container/card-conta
 
 export class IdeasComponent {
     @Input() selectedItem: any;
+    type: string = 'Ideas';
     items = [{
         comments_count: 3,
         created_at: "2016-07-11T16:25:13.112432",
@@ -56,7 +57,7 @@ export class IdeasComponent {
         },
         forked_from: null
     }];
-handleSelected(item: string) {
-    this.selectedItem = item;
-};
+    handleSelected(item: string) {
+        this.selectedItem = item;
+    };
 }

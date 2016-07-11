@@ -12,8 +12,10 @@
 
 a {
     color: currentColor;
+    font-weight: var(--bold);
     padding: 1rem;
     text-decoration: none;
+    transition: color .2s;
     &:hover {
         color: pink;
     }

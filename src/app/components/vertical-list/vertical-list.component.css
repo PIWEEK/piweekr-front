@@ -1,11 +1,11 @@
 @import '../../../globals.css';
 
 :host {
-    background: var(--gray900);
+    background: var(--gray800);
     color: var(--white);
     flex-grow: 0;
     flex-shrink: 0;
-    width: 20vw;
+    width: 30vw;
 }
 
 ul {
@@ -13,15 +13,24 @@ ul {
     padding: 0;
 }
 
-a {
+.title {
     background: var(--gray900);
-    border-bottom: 1px solid var(--gray800);
+    font-size: var(--font-small);
+    font-weight: var(--bold);
+    padding: 1rem;
+}
+
+a {
+    background: var(--gray800);
+    border-bottom: 1px solid var(--gray700);
     color: currentColor;
+    cursor: pointer;
     display: block;
     font-size: var(--font-small);
     padding: 1rem;
     transition: all .2s;
     transition-delay: .1s;
+    &.active,
     &:hover {
         background: var(--black);
         color: var(--primary);

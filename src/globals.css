@@ -28,4 +28,8 @@
     --font-small: .9rem;
     --font-xsmall: .7rem;
     --font-xxsmall: .5rem;
+
+    --bold: 600;
+    --normal: 400;
+    --light: 100;
 }

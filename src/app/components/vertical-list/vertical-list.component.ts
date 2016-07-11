@@ -8,9 +8,11 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 export class VerticalListComponent {
     @Input('items') itemsList: any;
+    @Input() type: string;
     @Output() currentItem = new EventEmitter<string>();
+    selectedItem;
     onSelectItem(item: string) {
-        console.log (item);
+        this.selectedItem = item;
         this.currentItem.emit(item);
     }
 }
