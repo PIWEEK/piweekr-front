@@ -1,0 +1,5 @@
+.title Invitados
+.users(*ngFor='let user of inviteds')
+    a([href]='user.id')
+        .name {{ user.name }}
+        img([src]='user.avatar')

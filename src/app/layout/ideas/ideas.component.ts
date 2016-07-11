@@ -12,6 +12,7 @@ import {CardContainerComponent} from "../../components/card-container/card-conta
 
 export class IdeasComponent {
     @Input() selectedItem: any;
+
     type: string = 'Ideas';
     items = [];
 
