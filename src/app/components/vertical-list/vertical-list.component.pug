@@ -1,4 +1,5 @@
 h1 Ideas
 nav
     ul
-        li List
+        li(*ngFor="let item of itemsList")
+            span((click)="onSelectItem(item.uuid)") {{item.title}}

@@ -1,6 +1,5 @@
 @import '../../../globals.css';
 
 :host {
-    background: var(--primary);
     display: block;
 }
