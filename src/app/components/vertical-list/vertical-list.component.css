@@ -1,3 +1,29 @@
-:root {
-    background: black;
+@import '../../../globals.css';
+
+:host {
+    background: var(--gray900);
+    color: var(--white);
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 20vw;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    background: var(--gray900);
+    border-bottom: 1px solid var(--gray800);
+    color: currentColor;
+    display: block;
+    font-size: var(--font-small);
+    padding: 1rem;
+    transition: all .2s;
+    transition-delay: .1s;
+    &:hover {
+        background: var(--black);
+        color: var(--primary);
+    }
 }

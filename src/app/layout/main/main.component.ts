@@ -8,6 +8,7 @@ import {User} from "../../model/user";
 @Component({
     selector: "main",
     templateUrl: "./app/layout/main/main.component.html",
+    styleUrls: ["./app/layout/main/main.component.css"],
     directives: [ ROUTER_DIRECTIVES, NavbarComponent ]
 })
 export class MainComponent {

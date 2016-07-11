@@ -1,4 +1,3 @@
 section.card-container
-    nav
-        ul
-            li(*ngFor="let item of itemsList") {{item.title}}
+    .selected-item(*ngIf="selectedItem" ) {{selectedItem}}
+    .card(*ngFor="let item of itemsList") {{item.title}}

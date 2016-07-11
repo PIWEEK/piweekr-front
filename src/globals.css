@@ -20,4 +20,12 @@
     --primary: #ffb093;
     --primary-dark: color(var(--primary) lightness(20%));
     --primary-light: color(var(--primary) blackness(20%));
+
+    --font-xxlarge: 3rem;
+    --font-xlarge: 1.5rem;
+    --font-large: 1.2rem;
+    --font-normal: 1rem;
+    --font-small: .9rem;
+    --font-xsmall: .7rem;
+    --font-xxsmall: .5rem;
 }

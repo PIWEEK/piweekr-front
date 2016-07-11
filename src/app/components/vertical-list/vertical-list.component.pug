@@ -1,5 +1,4 @@
-h1 Ideas
-nav
+nav.vertical-list
     ul
         li(*ngFor="let item of itemsList")
-            span((click)="onSelectItem(item.uuid)") {{item.title}}
+            a((click)="onSelectItem(item.uuid)", title="{{item.title}}") {{item.title}}

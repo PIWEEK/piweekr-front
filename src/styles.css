@@ -1,7 +1,13 @@
+@import 'globals.css';
 @import '../node_modules/normalize.css/normalize.css';
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    background: var(--gray100);
+    min-height: 100vh;
 }
 
 a {

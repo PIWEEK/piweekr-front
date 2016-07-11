@@ -1,5 +1,6 @@
 @import '../../../globals.css';
 
 :host {
-    display: block;
+    min-height: 100vh;
+    display: flex;
 }
