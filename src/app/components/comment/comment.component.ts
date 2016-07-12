@@ -11,7 +11,4 @@ const BASE_DIR = './app/components/comment';
 export class CommentComponent {
     @Input() comment: Object;
 
-    ngOnInit() {
-        console.log('CommentComponent');
-    }
 }

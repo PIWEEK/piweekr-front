@@ -11,10 +11,6 @@ const BASE_DIR = './app/components/invited';
 export class InvitedComponent {
     @Input() inviteds: Array<Object>;
 
-    ngOnInit() {
-        console.log('InvitedComponent');
-    }
-
     ngOnChanges() {
         this.inviteds = this.inviteds || [];
     }

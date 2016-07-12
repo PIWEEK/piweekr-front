@@ -27,5 +27,10 @@ export class MainComponent {
             ideas => console.log("IDEAS: ", ideas),
             err => console.log(err)
         );
+
+        this._api.projects.list().subscribe(
+            projects => console.log("PROJECTS: ", projects),
+            err => console.log(err)
+        );
     }
 }

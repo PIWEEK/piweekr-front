@@ -11,10 +11,6 @@ const BASE_DIR = './app/components/watch';
 export class WatchComponent {
     @Input('card-id') cardId: string;
 
-    ngOnInit() {
-        console.log('WatchComponent');
-    }
-
     forkProject() {
         console.log(`Watch Project with ID: ${this.cardId}`);
     }

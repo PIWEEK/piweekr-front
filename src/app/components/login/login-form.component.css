@@ -1,9 +1,12 @@
 @import '../../../globals.css';
 
+:host {
+    display: block;
+}
+
 .login {
     background: white;
     padding: 2em 5em;
-    width: 40vw;
     margin: auto;
 }
 

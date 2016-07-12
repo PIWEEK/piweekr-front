@@ -11,10 +11,6 @@ const BASE_DIR = './app/components/fork';
 export class ForkComponent {
     @Input('card-id') cardId: string;
 
-    ngOnInit() {
-        console.log('ForkComponent');
-    }
-
     forkProject() {
         console.log(`Fork Project with ID: ${this.cardId}`);
     }
