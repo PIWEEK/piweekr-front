@@ -32,5 +32,10 @@ export class MainComponent {
             projects => console.log("PROJECTS: ", projects),
             err => console.log(err)
         );
+
+        this._api.editions.current().subscribe(
+            edition => console.log("EDITION: ", edition),
+            err => console.log(err)
+        );
     }
 }

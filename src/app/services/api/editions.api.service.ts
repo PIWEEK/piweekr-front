@@ -12,8 +12,24 @@ export class EditionApiService extends ApiCommons {
     }
 
     list(): Observable<Edition[]> {
-        return this.get("editions").map(
-            json => json.map(v => new Edition(v))
-        ) ;
+        // return this.get("editions").map(
+        //     json => json.map(v => new Edition(v))
+        // ) ;
+        return Observable.of([
+            new Edition({
+                name: "XI edition",
+                startAt: "2016-12-12T09:00:00.000Z"
+            })
+        ]);
+    }
+
+    current(): Observable<Edition> {
+        // return this.get("editions").map(
+        //     json => json.map(v => new Edition(v))
+        // ) ;
+        return Observable.of(new Edition({
+            name: "XI edition",
+            startAt: "2016-12-15T09:00:00.000Z"
+        }));
     }
 }

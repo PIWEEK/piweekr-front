@@ -1,3 +1,4 @@
+import moment from 'moment';
 import {User} from "./user";
 import {Idea} from "./idea";
 import {Edition} from "./edition";
@@ -13,7 +14,7 @@ export class Project {
     needs: string;
     logo: string;
     piweek: Edition;
-    createdAt: string;
+    createdAt: moment.Moment;
     owner: User;
 
     constructor(data: {uuid: string,
@@ -39,7 +40,7 @@ export class Project {
         this.needs = data.needs;
         this.logo = data.logo;
         this.piweek = new Edition(data.piweek);
-        this.createdAt = data.createdAt;
+        this.createdAt = moment(data.createdAt);
         this.owner = new User(data.owner);
     }
 }

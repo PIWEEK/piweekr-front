@@ -1,3 +1,4 @@
+import moment from 'moment';
 import {User} from "./user";
 
 export class Idea {
@@ -7,7 +8,7 @@ export class Idea {
     owner: User;
     reactionsCounts: Map<string, number>;
     commentsCount: number;
-    createdAt: string;
+    createdAt: moment.Moment;
     isPublic: boolean;
     forkedFrom: string;
 
@@ -27,7 +28,7 @@ export class Idea {
         this.owner = (data.owner) ? new User(data.owner) : null;
         this.reactionsCounts = data.reactionsCounts;
         this.commentsCount = data.commentsCount;
-        this.createdAt = data.createdAt;
+        this.createdAt = moment(data.createdAt);
         this.isPublic = data.isPublic;
         this.forkedFrom = data.forkedFrom;
     }

@@ -1,9 +1,11 @@
+import moment from "moment";
+
 export class Edition {
     name: string;
-    startAt: string;
+    startAt: moment.Moment;
 
     constructor(data: {name: string, startAt: string}) {
         this.name = data.name;
-        this.startAt = data.startAt;
+        this.startAt = moment(data.startAt);
     }
 }
