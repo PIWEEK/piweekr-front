@@ -1,4 +1,13 @@
+include ../../../mixins
+
 header
+    .avatar
+      avatar-editor(
+          editable="false",
+          avatar-type="small-head",
+          [avatar]="card.owner.avatar",
+          background="black"
+      )
     .title {{ card.title }}
     owner(
         [owner]="card.owner",
@@ -11,5 +20,6 @@ comments-container(
     [comments]="card.commentsCount",
     [reactions]="card.reactionsCounts"
 )
-watch([card-id]="card.uuid")
-fork([card-id]="card.uuid")
+.actions
+  watch([card-id]="card.uuid")
+  fork([card-id]="card.uuid")

@@ -1,0 +1,30 @@
+@import '../../../globals.css';
+
+:host {
+    display: block;
+}
+
+button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary);
+        & svg {
+            fill: var(--primary);
+        }
+    }
+}
+
+span.icon {
+    padding: 0.2em;
+    margin-top: 4px;
+}
+
+span.text {
+    font-size: 0.9em;
+    text-transform: uppercase;
+}

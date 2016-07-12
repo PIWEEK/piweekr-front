@@ -1,1 +1,6 @@
-button(type='button', (click) = 'forkProject()') Fork
+include ../../../mixins
+
+button(type='button', (click) = 'forkProject()') 
+  span.icon
+    +icon('icon-swap_calls')
+  span.text Fork

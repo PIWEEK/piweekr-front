@@ -1,21 +1,9 @@
-.menu
-    a(href='') Menu
-    ul.menu
-        li.item(*ngFor='let item of options')
-            a(
-                href='javascript:void(0)',
-                [title]='item.name',
-                (click) = 'item.action(cardId)'
-            ) {{ item.name }}
+include ../../../mixins
 
-.data
-    .avatar
-        avatar-editor(
-            editable="false",
-            avatar-type="small-head",
-            [head]="owner.avatar.head",
-            [body]="owner.avatar.body",
-            [legs]="owner.avatar.legs",
-            background="black"
-        )
-    .name {{ owner.fullName }}
+a.options(href="#")
+  +icon('icon-more_vert')
+ul.menu
+  li.item(*ngFor='let item of options')
+    a(href='javascript:void(0)', 
+      [title]='item.name',
+      (click) = 'item.action(cardId)') {{ item.name }}

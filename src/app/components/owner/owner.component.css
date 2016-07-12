@@ -1,0 +1,49 @@
+@import '../../../globals.css';
+
+:host {
+    display: block;
+    position: relative;
+}
+
+.menu {
+    position: absolute;
+    background: white;
+    margin: 0;
+    padding: 0;
+    right: -10px;
+    top: 44px;
+    overflow: hidden;
+    box-shadow: 3px 3px 2px #BDBDBD;
+
+    & a {
+        display: block;
+        padding: 1em 0em;
+        text-decoration: none;
+        width: 14em;
+        padding-left: 1em;
+        background: var(--primary);
+        color: white;
+        transition: background .2s ease-in;
+
+        &:hover {
+            background: var(--primary-dark);
+        }
+    }
+}
+
+.options {
+    fill: white;
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    transition: background .2s ease-in;
+
+    &:hover {
+        background: #5516a9;
+    }
+
+    & svg {
+        width: 0.8em;
+        height: 0.8em;
+    }
+}

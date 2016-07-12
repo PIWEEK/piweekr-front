@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { CommentsContainerComponent } from '../comments-container/comments-container.component';
+import { AvatarEditorComponent } from "../avatar-editor/avatar-editor.component";
 import { InvitedComponent } from '../invited/invited.component';
 import { ForkComponent } from '../fork/fork.component';
 import { WatchComponent } from '../watch/watch.component';
@@ -17,7 +18,8 @@ const BASE_DIR = './app/components/card';
         InvitedComponent,
         ForkComponent,
         WatchComponent,
-        OwnerComponent
+        OwnerComponent,
+        AvatarEditorComponent
     ]
 })
 

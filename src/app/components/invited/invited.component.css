@@ -1,0 +1,10 @@
+@import '../../../globals.css';
+
+:host {
+    display: block;
+    padding: 1em 2em;
+    //background: var(--primary-light);
+    background: var(--gray100);
+    border-top: 1px solid var(--gray300);
+    border-bottom: 1px solid var(--gray300);
+}

@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {NgStyle} from '@angular/common';
+import {Avatar} from '../../model/user';
 
 const TOTAL_NO_HEADS = 10;
 const TOTAL_NO_BODY = 11;
@@ -19,6 +20,7 @@ export class AvatarEditorComponent {
     @Input() editable: boolean = true;
     @Input("avatar-type") avatarType: string;
     @Input() background: string;
+    @Input() avatar: Avatar;
 
     @Output() headChange: EventEmitter<number> = new EventEmitter<number>();
     @Output() bodyChange: EventEmitter<number> = new EventEmitter<number>();
@@ -30,6 +32,13 @@ export class AvatarEditorComponent {
     private styles = {};
 
     ngOnChanges() {
+        if (this.avatar) {
+            this.headId = this.avatar.head;
+            this.bodyId = this.avatar.body;
+            this.legsId = this.avatar.legs;
+            this.background = this.avatar.background || "black";
+        }
+
         this.headId = this.head || this.headId;
         this.bodyId = this.body || this.bodyId;
         this.legsId = this.leg || this.legsId;

@@ -1,16 +1,45 @@
 @import '../../../globals.css';
 
 :host {
-    background: var(--white);
+    background: #FAFAFA;
     border-radius: 4px;
-    box-shadow: 3px 3px 2px var(--gray400);
+    box-shadow: 3px 3px 2px #BDBDBD;
     margin: .5rem;
     overflow: hidden;
-    padding: 1rem;
     transition: box-shadow .2s ease-in;
+    margin-bottom: 3em;
+}
+    
+header {
+    align-items: center;
+    padding: 0.6em;
+    background: var(--primary);
+    color: white;
+    display: flex;
+
+    & .title {
+        flex-grow: 1;
+        font-size: 1.2rem;
+        margin-left: 0.5em;
+    }
 }
 
-header {
+.desc {
+    padding: 2em 2em;
+    line-height: 1.8em;
+    word-spacing: 2px;
+}
+
+.actions {
     display: flex;
-    justify-content: space-between;
+    margin: 0em 2em;
+    border-top: 1px solid #aaa;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    opacity: 0.3;
+    transition: opacity .2s ease-in;
+
+    &:hover {
+        opacity: 1;
+    }
 }

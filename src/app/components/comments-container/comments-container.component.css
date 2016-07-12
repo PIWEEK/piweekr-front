@@ -1,4 +1,61 @@
+@import '../../../globals.css';
+
+:host {
+    display: block;
+}
+
+.feedback {
+    display: flex;
+    align-items: center;
+    padding: 0.4em 2em;
+    height: 3em;
+}
+
 .comments, .reactions {
     display: flex;
     align-items: flex-start;
+}
+
+.reaction {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--gray500);
+    padding: 0.2em 0.4em;
+    border-radius: 10px;
+    background-color: var(--gray100);
+    margin-top: 1px;
+    margin-right: 0.3em;
+
+    & .emoji {
+        height: 1.3em;
+        width: 1.3em;
+        margin-right: 0.2em;
+    }
+
+    & .counter {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: var(--primary);
+    }
+}
+
+.comments {
+    margin-left: auto;
+    align-items: center;
+
+    & .icon-message {
+        fill: var(--primary);
+        margin-bottom: -0.2em;
+    }
+
+    & .counter {
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+    & .content {
+        font-weight: bold;
+        margin-bottom: 2px;
+        margin-left: 5px;
+    }
 }

@@ -1,1 +1,6 @@
-button(type='button', (click) = 'watchProject()') Watch
+include ../../../mixins
+
+button(type='button', (click) = 'watchProject()') 
+  span.icon
+    +icon('icon-visibility')
+  span.text Watch

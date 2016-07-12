@@ -1,8 +1,12 @@
-.comments
-    | Comentarios
-    .count ({{ comments }})
+include ../../../mixins
+
+.feedback
     .reactions
-        .emoji(
-            *ngFor='let reaction of reactions | KeysFilter',
-            [ngClass]='"emoji-" + reaction.key'
-        ) ({{ reaction.value }})
+      .reaction(*ngFor='let reaction of reactions | KeysFilter')
+        span.emoji([ngClass]='"emoji-" + reaction.key')
+        span.counter {{ reaction.value }}
+    a.comments(href="#")
+      span 
+        +icon('icon-message')
+      span.counter {{ comments }}
+      span.content comentarios
