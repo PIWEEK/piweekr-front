@@ -1,5 +1,9 @@
 @import '../../../globals.css';
 
+:host {
+    padding-top: 50px;
+}
+
 .content {
     align-items: center;
     display: flex;

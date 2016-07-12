@@ -1,21 +1,20 @@
 nav.nav-bar
     a.logo([routerLink]="['/']")
         img(src="/assets/images/logo.png")
-    a([routerLink]="['/ideas']")
-        span Ideas
+    a([routerLink]="['/ideas']") Ideas
+    a([routerLink]="['/projects']") Projects
     a([routerLink]="['/marketplace']") Marketplace
 
     .login(*ngIf="session.currentUser")
       avatar-editor(
-        editable="false", 
-        avatar-type="small-head", 
-        [head]="session.currentUser.avatar.head", 
-        [body]="session.currentUser.avatar.body", 
-        [legs]="session.currentUser.avatar.legs", 
+        editable="false",
+        avatar-type="small-head",
+        [head]="session.currentUser.avatar.head",
+        [body]="session.currentUser.avatar.body",
+        [legs]="session.currentUser.avatar.legs",
         [background]="session.currentUser.avatar.background")
 
       a([routerLink]="['/profile']") {{session.currentUser.fullName}}
 
     .login(*ngIf="!session.currentUser")
       a([routerLink]="['/login']") Login
-

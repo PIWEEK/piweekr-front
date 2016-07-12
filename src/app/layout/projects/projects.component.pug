@@ -1,0 +1,13 @@
+include ../../../mixins
+vertical-list(
+    [type]="type",
+    [items]="items",
+    (currentItem)="handleSelected($event)"
+)
+    +comploader
+card-container(
+    [items]="items",
+    [selectedItem]="selectedItem",
+    [owner-menu]="ownerMenu"
+)
+    +comploader

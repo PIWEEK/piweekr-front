@@ -2,16 +2,19 @@
 
 :host {
     color: var(--white);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .nav-bar {
-    background: var(--primary);
+    background: color(var(--primary) a(90%));
     align-items: center;
     display: flex;
 }
 
 a {
-    background: var(--primary);
+    background: transparent;
     color: currentColor;
     font-weight: var(--light);
     padding: 1rem;
@@ -27,4 +30,3 @@ a {
     display: flex;
     align-items: center;
 }
-
