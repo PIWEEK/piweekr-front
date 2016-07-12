@@ -9,7 +9,7 @@ const BASE_DIR = './app/components/fork';
 })
 
 export class ForkComponent {
-    @Input() cardId: number;
+    @Input() cardId: string;
 
     ngOnInit() {
         console.log('ForkComponent');

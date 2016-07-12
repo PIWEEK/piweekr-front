@@ -22,6 +22,7 @@ export class IdeasComponent {
             err => console.log(err)
         );
     }
+
     handleSelected(item: string) {
         this.selectedItem = item;
     };
