@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
-import { User } from "../../model/user";
+import { UserSessionService } from "../../services/user-session.service";
 
 @Component({
     selector: "nav-bar",
@@ -11,15 +11,5 @@ import { User } from "../../model/user";
 })
 
 export class NavbarComponent {
-    currentUser: User = new User({
-        userName: "Alotor",
-        fullName: "Alonso Torres",
-        email: "alotor@gmail.com",
-        avatar: {
-            head: 6,
-            body: 6,
-            legs: 6,
-            background: "#FFFF00"
-        }
-    });
+    constructor(public session: UserSessionService) {}
 }

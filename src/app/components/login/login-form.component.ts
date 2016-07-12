@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { LoginAuth } from "../../model/auth";
+import { ApiService } from "../../services/api.service";
+
 
 @Component({
     selector: "login-form",
@@ -10,11 +13,16 @@ export class LoginFormComponent {
     model: LoginAuth = new LoginAuth();
     submitted: boolean = false;
 
+    constructor(private api: ApiService, private router: Router) {}
+
     onSubmit() {
         this.submitted = true;
-        if (!this.submited) {
-            console.log(JSON.stringify(this.model));
-        }
+        console.log(JSON.stringify(this.model));
+
+        this.api.auth.login(this.model).subscribe(
+            user => this.router.navigate(['/']),
+            err => console.error(">>> ERROR", err)
+        );
     }
 }
 

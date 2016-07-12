@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {AvatarEditorComponent} from "../../components/avatar-editor/avatar-editor.component";
-import {User} from "../../model/user";
+import { UserSessionService } from "../../services/user-session.service";
 
 @Component({
     selector: "profile-layout",
@@ -10,15 +10,5 @@ import {User} from "../../model/user";
 })
 
 export class ProfileComponent {
-    currentUser: User = new User({
-        userName: "Alotor",
-        fullName: "Alonso Torres",
-        email: "alotor@gmail.com",
-        avatar: {
-            head: 6,
-            body: 6,
-            legs: 6,
-            background: "#FFFF00"
-        }
-    });
+    constructor(public session: UserSessionService) {}
 }

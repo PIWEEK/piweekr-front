@@ -4,9 +4,18 @@ nav.nav-bar
     a([routerLink]="['/ideas']")
         span Ideas
     a([routerLink]="['/marketplace']") Marketplace
-    a([routerLink]="['/profile']") Profile
 
-    .login
-      avatar-editor(editable="false", avatar-type="small-head", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
+    .login(*ngIf="session.currentUser")
+      avatar-editor(
+        editable="false", 
+        avatar-type="small-head", 
+        [head]="session.currentUser.avatar.head", 
+        [body]="session.currentUser.avatar.body", 
+        [legs]="session.currentUser.avatar.legs", 
+        [background]="session.currentUser.avatar.background")
 
+      a([routerLink]="['/profile']") {{session.currentUser.fullName}}
+
+    .login(*ngIf="!session.currentUser")
       a([routerLink]="['/login']") Login
+

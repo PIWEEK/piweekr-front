@@ -1,10 +1,48 @@
-section
-  avatar-editor([editable]="true", [(head)]="currentUser.avatar.head", [(body)]="currentUser.avatar.body", [(legs)]="currentUser.avatar.legs")
-  avatar-editor(editable="false", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
-  avatar-editor(editable="false", avatar-type="medium-body", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
-  avatar-editor(editable="false", avatar-type="small-body", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
-  avatar-editor(editable="false", avatar-type="medium-head", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
-  avatar-editor(editable="false", avatar-type="small-head", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
+section(*ngIf="session.currentUser")
+  avatar-editor(
+    [editable]="true", 
+    [(head)]="session.currentUser.avatar.head", 
+    [(body)]="session.currentUser.avatar.body", 
+    [(legs)]="session.currentUser.avatar.legs")
+
+  avatar-editor(
+    editable="false", 
+    [head]="session.currentUser.avatar.head", 
+    [body]="session.currentUser.avatar.body", 
+    [legs]="session.currentUser.avatar.legs", 
+    [background]="session.currentUser.avatar.background")
+
+  avatar-editor(
+    editable="false", 
+    avatar-type="medium-body", 
+    [head]="session.currentUser.avatar.head", 
+    [body]="session.currentUser.avatar.body", 
+    [legs]="session.currentUser.avatar.legs", 
+    [background]="session.currentUser.avatar.background")
+
+  avatar-editor(
+    editable="false",
+    avatar-type="small-body", 
+    [head]="session.currentUser.avatar.head", 
+    [body]="session.currentUser.avatar.body", 
+    [legs]="session.currentUser.avatar.legs", 
+    [background]="session.currentUser.avatar.background")
+
+  avatar-editor(
+    editable="false", 
+    avatar-type="medium-head", 
+    [head]="session.currentUser.avatar.head", 
+    [body]="session.currentUser.avatar.body", 
+    [legs]="session.currentUser.avatar.legs", 
+    [background]="session.currentUser.avatar.background")
+
+  avatar-editor(
+    editable="false", 
+    avatar-type="small-head", 
+    [head]="session.currentUser.avatar.head", 
+    [body]="session.currentUser.avatar.body", 
+    [legs]="session.currentUser.avatar.legs", 
+    [background]="session.currentUser.avatar.background")
 
 
   
