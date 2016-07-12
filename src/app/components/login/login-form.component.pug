@@ -1,0 +1,6 @@
+.login
+  form(method="post", (ngSubmit)="onSubmit()", #loginForm="ngForm")
+    input(placeholder="User id", autofocus="true", name="userName", [(ngModel)]="model.userName")
+    input(placeholder="Password", type="password", name="password", [(ngModel)]="model.password")
+    button(type="submit", value="login") Login
+
