@@ -18,4 +18,11 @@ button {
     position: absolute;
     right: 2rem;
     top: 2rem;
+    & svg {
+        fill: var(--white);
+        height: 1.2rem;
+        vertical-align: bottom;
+        padding-right: .5rem;
+        width: 1.2rem;
+    }
 }

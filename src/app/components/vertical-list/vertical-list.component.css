@@ -32,7 +32,7 @@ a {
     transition-delay: .1s;
     &.active,
     &:hover {
-        background: var(--gray900);
-        color: var(--text-light);
+        background: var(--gray200);
+        color: var(--gray900);
     }
 }
