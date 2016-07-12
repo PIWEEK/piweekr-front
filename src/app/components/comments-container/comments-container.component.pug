@@ -1,0 +1,8 @@
+.comments
+    | Comentarios
+    .count ({{ comments }})
+    .reactions
+        .emoji(
+            *ngFor='let reaction of reactions | KeysFilter',
+            [ngClass]='reaction.key'
+        ) ({{ reaction.value }})

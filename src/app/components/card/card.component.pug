@@ -1,9 +1,10 @@
-.owner(data-card-id="card.uuid")
-    .menu Menu
-    .avatar Avatar
-.title {{ card.title }}
+header
+    .title {{ card.title }}
+    .owner(data-card-id="card.uuid")
+        .menu Menu
+        .avatar
 .desc {{ card.description }}
 invited([inviteds]="card.inviteds")
-comment(*ngFor="let co of card.comments", [comment]="co")
-.watch
-fork([cardId]="card.uuid")
+comments-container([comments]="card.commentsCount", [reactions]="card.reactionsCounts")
+watch([card-id]="card.uuid")
+fork([card-id]="card.uuid")

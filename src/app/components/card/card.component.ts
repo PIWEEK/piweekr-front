@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 
-import { CommentComponent } from '../comment/comment.component';
+import { CommentsContainerComponent } from '../comments-container/comments-container.component';
 import { InvitedComponent } from '../invited/invited.component';
 import { ForkComponent } from '../fork/fork.component';
+import { WatchComponent } from '../watch/watch.component';
 
 const BASE_DIR = './app/components/card';
 
@@ -10,7 +11,12 @@ const BASE_DIR = './app/components/card';
     selector: 'card',
     templateUrl: `${BASE_DIR}/card.component.html`,
     styleUrls: [`${BASE_DIR}/card.component.css`],
-    directives: [CommentComponent, InvitedComponent, ForkComponent]
+    directives: [
+        CommentsContainerComponent,
+        InvitedComponent,
+        ForkComponent,
+        WatchComponent
+    ]
 })
 
 export class CardComponent {
