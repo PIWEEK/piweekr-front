@@ -1,4 +1,4 @@
-.title(*ngIf='inviteds.length == 0') No hay ningún invitado
+.title(*ngIf='!inviteds.length') No hay ningún invitado
 .title(*ngIf='inviteds.length') Invitados
 .users(*ngFor='let invited of inviteds')
     a([href]='invited.id')

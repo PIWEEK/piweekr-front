@@ -1,8 +1,6 @@
 header
     .title {{ card.title }}
-    .owner(data-card-id="card.uuid")
-        .menu Menu
-        .avatar
+    owner([owner]="card.owner")
 .desc {{ card.description }}
 invited([inviteds]="card.inviteds")
 comments-container([comments]="card.commentsCount", [reactions]="card.reactionsCounts")

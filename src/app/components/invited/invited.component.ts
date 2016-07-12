@@ -9,7 +9,7 @@ const BASE_DIR = './app/components/invited';
 })
 
 export class InvitedComponent {
-    @Input() inviteds: Array<Object> = [];
+    @Input() inviteds: Array<Object>;
 
     constructor() {
         console.log(this);
@@ -17,5 +17,9 @@ export class InvitedComponent {
 
     ngOnInit() {
         console.log('InvitedComponent');
+    }
+
+    ngOnChanges() {
+        this.inviteds = this.inviteds || [];
     }
 }

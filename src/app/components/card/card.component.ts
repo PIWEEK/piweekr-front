@@ -4,6 +4,7 @@ import { CommentsContainerComponent } from '../comments-container/comments-conta
 import { InvitedComponent } from '../invited/invited.component';
 import { ForkComponent } from '../fork/fork.component';
 import { WatchComponent } from '../watch/watch.component';
+import { OwnerComponent } from '../owner/owner.component';
 
 const BASE_DIR = './app/components/card';
 
@@ -15,7 +16,8 @@ const BASE_DIR = './app/components/card';
         CommentsContainerComponent,
         InvitedComponent,
         ForkComponent,
-        WatchComponent
+        WatchComponent,
+        OwnerComponent
     ]
 })
 
