@@ -8,6 +8,7 @@ export class Avatar {
         this.head = data.head;
         this.body = data.body;
         this.legs = data.legs;
+        this.background = data.background;
     }
 }
 

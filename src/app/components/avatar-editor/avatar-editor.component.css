@@ -1,5 +1,26 @@
+:host[avatar-type="small-body"] {
+    transform: scale(0.3);
+}
+
+:host[avatar-type="medium-body"] {
+    transform: scale(0.8);
+}
+
+:host[avatar-type="small-head"] {
+    transform: scale(0.3);
+    height: 120px;
+}
+
+:host[avatar-type="medium-head"] {
+    transform: scale(0.8);
+    height: 120px;
+}
+
+
 .avatar-editor {
     vertical-align: center;
+    overflow: hidden;
+    height: 100%;
 }
 
 .avatar {
@@ -16,8 +37,8 @@
     margin-top: -30px;
 }
 
-.avatar__legs img {
-    z-index: -1;
+.avatar__body img {
+    z-index: 1;
 }
 
 .image {

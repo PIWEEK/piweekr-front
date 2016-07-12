@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {AvatarEditorComponent} from "../../components/avatar-editor/avatar-editor.component";
+import {User} from "../../model/user";
 
 @Component({
     selector: "profile-layout",
@@ -9,4 +10,15 @@ import {AvatarEditorComponent} from "../../components/avatar-editor/avatar-edito
 })
 
 export class ProfileComponent {
+    currentUser: User = new User({
+        userName: "Alotor",
+        fullName: "Alonso Torres",
+        email: "alotor@gmail.com",
+        avatar: {
+            head: 6,
+            body: 6,
+            legs: 6,
+            background: "#FFFF00"
+        }
+    });
 }

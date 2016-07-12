@@ -1,9 +1,9 @@
 section {
-    text-align: center;
+    display: flex;
+    margin: auto;
+    width: 50vw;
 }
 
 avatar-editor {
     display: block;
-    width: 20vw;
-    margin: 3em auto;
 }
