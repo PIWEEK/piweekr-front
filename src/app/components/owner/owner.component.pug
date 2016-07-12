@@ -10,4 +10,12 @@
 
 .data
     .avatar
+        avatar-editor(
+            editable="false",
+            avatar-type="small-head",
+            [head]="owner.avatar.head",
+            [body]="owner.avatar.body",
+            [legs]="owner.avatar.legs",
+            background="black"
+        )
     .name {{ owner.fullName }}
