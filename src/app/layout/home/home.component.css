@@ -1,3 +1,25 @@
-.app {
-  color: blue;
+section {
+    text-align: center;
+    margin-top: 10rem;
+}
+.content {
+    width: 50vw;
+    margin: auto;
+}
+
+.logo {
+    height: 150px;
+}
+
+.site-description span {
+    display: block;
+    font-size: 0.5em;
+}
+
+.next-edition {
+    color: #ffb093;
+
+    & span {
+        display: block;
+    }
 }
