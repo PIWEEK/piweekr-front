@@ -25,7 +25,4 @@ export class CardComponent {
     @Input() card: Object;
     @Input('owner-menu') ownerMenu: Array<Object>;
 
-    ngOnInit() {
-        console.log('CardComponent');
-    }
 }

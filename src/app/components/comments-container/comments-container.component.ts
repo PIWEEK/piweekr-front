@@ -17,8 +17,4 @@ const BASE_DIR = './app/components/comments-container';
 export class CommentsContainerComponent {
     @Input() comments: number;
     @Input() reactions: Object = {};
-
-    ngOnInit() {
-        console.log('CommentsContainerComponent');
-    }
 }

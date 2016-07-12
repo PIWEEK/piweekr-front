@@ -14,8 +14,4 @@ export class CardContainerComponent {
     @Input('items') itemsList: any;
     @Input() selectedItem: string;
     @Input('owner-menu') ownerMenu: Array<Object>;
-
-    ngOnInit() {
-        console.log('this.ownerMenu', this.ownerMenu);
-    }
 }

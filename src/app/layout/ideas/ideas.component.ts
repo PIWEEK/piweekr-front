@@ -43,10 +43,6 @@ export class IdeasComponent {
         ];
     }
 
-    ngOnInit() {
-        console.log('IdeasComponent');
-    }
-
     handleSelected(item: string) {
         this.selectedItem = item;
     };
