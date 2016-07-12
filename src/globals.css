@@ -35,4 +35,19 @@
     --bold: 600;
     --normal: 400;
     --light: 100;
+
+    --button: {
+        background:none;
+        border:none;
+        padding: 1rem;
+    };
+    --button-primary: {
+        color: var(--white);
+        cursor: pointer;
+        background-color: var(--primary);
+        transition: background .2s;
+        &:hover {
+            background-color: var(--primary-dark);
+        }
+    };
 }

@@ -15,8 +15,7 @@ a {
     text-decoration: none;
 }
 
-button {
-  background:none;
-  border:none;
-  font-size:1rem;
+svg {
+    height: 1rem;
+    width: 1rem;
 }

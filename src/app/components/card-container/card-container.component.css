@@ -1,5 +1,21 @@
 @import '../../../globals.css';
 
-:root {
-    background: black;
+:host {
+    flex: 1;
+    position: relative;
+}
+
+.card-container {
+    margin: 2rem auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+button {
+    @apply --button;
+    @apply --button-primary;
+    width: 150px;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
 }

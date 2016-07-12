@@ -1,3 +1,7 @@
+button(type="button")
+    svg.icon.icon-add
+        use(xlink:href="assets/svg/symbol-defs.svg#icon-add")
+    Add idea
 section.card-container
     .selected-item(*ngIf="selectedItem" ) {{selectedItem}}
     .card(*ngFor="let item of itemsList") {{item.title}}
