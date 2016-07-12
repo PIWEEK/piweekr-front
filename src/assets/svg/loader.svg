@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.1 76.7">
-  <path fill="#000000" d="M0 76.7V0h58v76.7H47V11.2H11v65.5z"/>
-  <path fill="#000000" d="M23 0h12v61H23z"/>
+  <path d="M0 76.7V0h58v76.7H47V11.2H11v65.5z"/>
+  <path d="M23 0h12v61H23z" style="isolation:auto;mix-blend-mode:normal" color="#000" overflow="visible" solid-color="#000000"/>
 </svg>
