@@ -34,7 +34,7 @@ export class AvatarEditorComponent {
         this.bodyId = this.body || this.bodyId;
         this.legsId = this.leg || this.legsId;
         this.styles = {};
-        this.styles["background-color"] = this.background || "black";
+        this.styles["background-color"] = this.background || "transparent";
     }
 
     private incrementPart(part:number, increment:number, max:number) {

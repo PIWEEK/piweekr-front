@@ -20,7 +20,11 @@ a {
     &:hover {
         background: var(--primary-dark);
     }
-    &.login {
-        margin-left: auto;
-    }
 }
+
+.login {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+

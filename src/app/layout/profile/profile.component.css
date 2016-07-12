@@ -2,6 +2,9 @@ section {
     display: flex;
     margin: auto;
     width: 50vw;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2em auto;
 }
 
 avatar-editor {

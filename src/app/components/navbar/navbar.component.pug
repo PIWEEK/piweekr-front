@@ -5,4 +5,8 @@ nav.nav-bar
         span Ideas
     a([routerLink]="['/marketplace']") Marketplace
     a([routerLink]="['/profile']") Profile
-    a.login([routerLink]="['/login']") Login
+
+    .login
+      avatar-editor(editable="false", avatar-type="small-head", [head]="currentUser.avatar.head", [body]="currentUser.avatar.body", [legs]="currentUser.avatar.legs", [background]="currentUser.avatar.background")
+
+      a([routerLink]="['/login']") Login
