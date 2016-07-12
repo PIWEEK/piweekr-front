@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { ApiCommons } from './api.commons';
-import { Project } from '../model/project';
+import { Project } from '../../model/project';
 
 @Injectable()
 export class ProjectApiService extends ApiCommons {

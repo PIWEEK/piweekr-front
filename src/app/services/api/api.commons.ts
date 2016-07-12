@@ -1,8 +1,8 @@
-import '../rxjs-operators';
+import '../../rxjs-operators';
 
 import { Http, Headers, RequestMethod, Request, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { API_ROUTES } from './api.routes';
+import { API_ROUTES } from '../api.routes';
 
 export class ApiCommons {
     constructor (

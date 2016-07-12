@@ -1,4 +1,3 @@
-
 export class Edition {
     name: string;
     startAt: string;
