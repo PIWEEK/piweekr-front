@@ -5,10 +5,12 @@ export class KeysFilter implements PipeTransform {
     transform(value: any, args: any[] = null): any {
         let keys = [];
         for (let key in value) {
-            keys.push({
-                key: key,
-                value: value[key]
-            });
+            if (value.hasOwnProperty(key)) {
+                keys.push({
+                    key: key,
+                    value: value[key]
+                });
+            }
         }
         return keys;
     }

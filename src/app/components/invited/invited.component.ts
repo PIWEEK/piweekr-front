@@ -9,7 +9,11 @@ const BASE_DIR = './app/components/invited';
 })
 
 export class InvitedComponent {
-    @Input() inviteds: Object;
+    @Input() inviteds: Array<Object> = [];
+
+    constructor() {
+        console.log(this);
+    }
 
     ngOnInit() {
         console.log('InvitedComponent');

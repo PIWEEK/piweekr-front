@@ -14,4 +14,8 @@ export class WatchComponent {
     ngOnInit() {
         console.log('WatchComponent');
     }
+
+    forkProject() {
+        console.log(`Watch Project with ID: ${this.cardId}`);
+    }
 }

@@ -4,5 +4,5 @@
     .reactions
         .emoji(
             *ngFor='let reaction of reactions | KeysFilter',
-            [ngClass]='reaction.key'
+            [ngClass]='"emoji-" + reaction.key'
         ) ({{ reaction.value }})

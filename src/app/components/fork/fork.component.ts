@@ -14,4 +14,8 @@ export class ForkComponent {
     ngOnInit() {
         console.log('ForkComponent');
     }
+
+    forkProject() {
+        console.log(`Fork Project with ID: ${this.cardId}`);
+    }
 }

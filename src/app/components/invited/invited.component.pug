@@ -1,5 +1,6 @@
-.title Invitados
-.users(*ngFor='let user of inviteds')
-    a([href]='user.id')
-        .name {{ user.name }}
-        img([src]='user.avatar')
+.title(*ngIf='inviteds.length == 0') No hay ningún invitado
+.title(*ngIf='inviteds.length') Invitados
+.users(*ngFor='let invited of inviteds')
+    a([href]='invited.id')
+        .name {{ invited.name }}
+        img([src]='invited.avatar')

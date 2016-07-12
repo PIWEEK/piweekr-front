@@ -7,8 +7,8 @@
     cursor: move;
     margin: .5rem;
     overflow: hidden;
+    padding: 1rem;
     transition: box-shadow .2s ease-in;
-    width: 250px;
 }
 
 header {
