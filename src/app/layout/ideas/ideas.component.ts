@@ -13,7 +13,7 @@ import {CardContainerComponent} from "../../components/card-container/card-conta
 export class IdeasComponent {
     @Input() selectedItem: any;
 
-    static type: string = 'Ideas';
+    type: string = 'Ideas';
     items = [];
     ownerMenu: Array<Object>;
 
