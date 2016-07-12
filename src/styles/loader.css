@@ -1,0 +1,65 @@
+@import '../globals.css';
+
+/*Loader*/
+svg {
+    height: 1rem;
+    width: 1rem;
+}
+.square-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    height: 100%;
+    max-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
+    animation: piweek 10s infinite;
+    fill: var(--primary);
+    height: 4.9rem;
+    transform: rotate(180deg);
+    width: 4rem;
+}
+.center-stroke {
+    animation: stroke 10s infinite;
+    fill: var(--primary);
+    opacity: 0;
+}
+@keyframes piweek {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(180deg);
+    }
+    40% {
+        transform: rotate(-90deg);
+    }
+    60% {
+        transform: rotate(-450deg);
+    }
+    80% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+@keyframes stroke {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
