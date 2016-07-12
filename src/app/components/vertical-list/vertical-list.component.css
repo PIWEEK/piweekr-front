@@ -5,7 +5,7 @@
     color: var(--white);
     flex-grow: 0;
     flex-shrink: 0;
-    width: 30vw;
+    width: 20vw;
 }
 
 ul {
@@ -15,7 +15,7 @@ ul {
 
 .title {
     background: var(--gray900);
-    font-size: var(--font-small);
+    font-size: var(--font-normal);
     font-weight: var(--bold);
     padding: 1rem;
 }
@@ -32,7 +32,7 @@ a {
     transition-delay: .1s;
     &.active,
     &:hover {
-        background: var(--black);
-        color: var(--primary);
+        background: var(--gray900);
+        color: var(--text-light);
     }
 }

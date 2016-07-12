@@ -5,7 +5,7 @@
 }
 
 .nav-bar {
-    background: var(--primary-dark);
+    background: var(--primary);
     align-items: center;
     display: flex;
 }
