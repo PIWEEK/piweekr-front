@@ -1,7 +1,8 @@
 nav.nav-bar
     a.logo([routerLink]="['/']")
         img(src="/assets/images/logo.png")
-    a.emoji.emoji-dancer([routerLink]="['/ideas']") Ideas
+    a([routerLink]="['/ideas']")
+        span Ideas
     a([routerLink]="['/marketplace']") Marketplace
     a([routerLink]="['/profile']") Profile
     a.login([routerLink]="['/login']") Login
