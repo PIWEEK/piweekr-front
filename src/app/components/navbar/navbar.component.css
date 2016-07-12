@@ -11,15 +11,15 @@
 }
 
 a {
+    background: var(--primary);
     color: currentColor;
-    font-weight: var(--bold);
+    font-weight: var(--light);
     padding: 1rem;
     text-decoration: none;
-    transition: color .2s;
+    transition: background .2s;
     &:hover {
-        color: pink;
+        background: var(--primary-dark);
     }
-
     &.login {
         margin-left: auto;
     }

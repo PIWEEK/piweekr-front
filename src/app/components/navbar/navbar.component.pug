@@ -1,7 +1,7 @@
 nav.nav-bar
-    // Add logo here
-    a([routerLink]="['/']") PIWEEKR
-    a([routerLink]="['/ideas']") Ideas
+    a.logo([routerLink]="['/']")
+        img(src="/assets/images/logo.png")
+    a.emoji.emoji-dancer([routerLink]="['/ideas']") Ideas
     a([routerLink]="['/marketplace']") Marketplace
     a([routerLink]="['/profile']") Profile
     a.login([routerLink]="['/login']") Login

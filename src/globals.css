@@ -17,12 +17,14 @@
     --gray100: #F5F5F5;
     --whitish: #FAFAFA;
     --white: #FAFAFA;
+
     --primary: #761cec;
-    --primary-dark: color(var(--primary) lightness(20%));
-    --primary-light: color(var(--primary) blackness(20%));
+    --primary-dark: color(var(--primary) lightness(-20%));
+    --primary-light: color(var(--primary) lightness(+20%));
+    
     --text: #ffb093;
-    --text-dark: color(var(--text) lightness(20%));
-    --text-light: color(var(--text) blackness(20%));
+    --text-dark: color(var(--text) lightness(-20%));
+    --text-light: color(var(--text) lightness(+20%));
 
     --font-xxlarge: 3rem;
     --font-xlarge: 1.5rem;

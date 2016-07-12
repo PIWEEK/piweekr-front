@@ -1,27 +1,25 @@
 @import '../../../globals.css';
 
-section {
-    text-align: center;
-    margin-top: 10rem;
-}
 .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
     width: 50vw;
-    margin: auto;
 }
 
-.logo {
-    height: 150px;
-}
-
-.site-description span {
-    display: block;
-    font-size: var(--font-small);
+.site-description {
+    & span {
+        color: var(--gray800);
+        display: block;
+        font-size: var(--font-xlarge);
+        font-weight: var(--light);
+    }
 }
 
 .next-edition {
-    color: var(--text);
-
-    & span {
-        display: block;
-    }
+    color: var(--primary);
+    font-size: var(--font-xlarge);
 }

@@ -1,5 +1,6 @@
 @import 'globals.css';
 @import '../node_modules/normalize.css/normalize.css';
+
 * {
     box-sizing: border-box;
 }
@@ -11,6 +12,50 @@ body {
 a {
     text-decoration: none;
 }
+
+/*Emojis*/
+
+.emoji {
+    font-size: var(--large);
+    &-smile {
+        &:before {
+            content: "\01F604"
+        }
+    }
+    &-thumbsup {
+        &:before {
+            content: "\01F604"
+        }
+    }
+    &-thumbsdown {
+        &:before {
+            content: "\01F44E"
+        }
+    }
+    &-beer {
+        &:before {
+            content: "\01F37A"
+        }
+    }
+    &-confused {
+        &:before {
+            content: "\01F615"
+        }
+    }
+    &-dancer {
+        &:before {
+            content: "\01F483"
+        }
+    }
+    &-clap {
+        &:before {
+            content: "\01F44F"
+        }
+    }
+}
+
+/*Loader*/
+
 svg {
     height: 1rem;
     width: 1rem;
