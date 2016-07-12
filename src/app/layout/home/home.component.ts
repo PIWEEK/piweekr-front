@@ -1,6 +1,7 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {NavbarComponent} from "../../components/navbar/navbar.component";
-import {CounterBackComponent} from "../../components/counterback/counterback.component";
+import {AboutComponent} from "../../components/about/about.component";
+import {CountDownComponent} from "../../components/countdown/countdown.component";
 
 import moment from 'moment';
 
@@ -8,11 +9,8 @@ import moment from 'moment';
     selector: "home-layout",
     templateUrl: "./app/layout/home/home.component.html",
     styleUrls: ["./app/layout/home/home.component.css"],
-    directives: [NavbarComponent, CounterBackComponent]
+    directives: [NavbarComponent, CountDownComponent]
 })
 
 export class HomeComponent {
-    constructor() {
-        console.log(moment().format());
-    }
 }

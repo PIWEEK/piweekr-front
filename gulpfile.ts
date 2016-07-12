@@ -81,7 +81,8 @@ gulp.task("libs", () => {
             'zone.js/dist/**',
             '@angular/**',
             'immutable/**',
-            'moment/**'
+            'moment/**',
+            'countdown/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

@@ -6,7 +6,8 @@
         'rxjs': 'lib/rxjs',
         '@angular': 'lib/@angular',
         'immutable': 'lib/immutable',
-        'moment': 'lib/moment'
+        'moment': 'lib/moment',
+        'countdown': 'lib/countdown'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -14,7 +15,8 @@
         'app': {main: 'main.js', defaultExtension: 'js'},
         'rxjs': {defaultExtension: 'js'},
         'immutable': {main: 'dist/immutable.min.js'},
-        'moment': {main: 'moment.js'}
+        'moment': {main: 'moment.js'},
+        'countdown': {main: 'countdown.js'}
     };
 
     var packageNames = [
