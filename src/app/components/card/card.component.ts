@@ -23,6 +23,7 @@ const BASE_DIR = './app/components/card';
 
 export class CardComponent {
     @Input() card: Object;
+    @Input('owner-menu') ownerMenu: Array<Object>;
 
     ngOnInit() {
         console.log('CardComponent');

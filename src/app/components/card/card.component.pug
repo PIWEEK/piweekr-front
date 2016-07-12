@@ -1,8 +1,15 @@
 header
     .title {{ card.title }}
-    owner([owner]="card.owner")
+    owner(
+        [owner]="card.owner",
+        [owner-options]="ownerMenu",
+        [card-id]="card.uuid",
+    )
 .desc {{ card.description }}
 invited([inviteds]="card.inviteds")
-comments-container([comments]="card.commentsCount", [reactions]="card.reactionsCounts")
+comments-container(
+    [comments]="card.commentsCount",
+    [reactions]="card.reactionsCounts"
+)
 watch([card-id]="card.uuid")
 fork([card-id]="card.uuid")

@@ -10,8 +10,14 @@ const BASE_DIR = './app/components/owner';
 
 export class OwnerComponent {
     @Input() owner: Object;
+    @Input('owner-options') options: Object;
+    @Input('card-id') cardId: string;
 
     ngOnInit() {
         console.log('OwnerComponent');
+    }
+
+    ngOnChanges() {
+        this.options = this.options || [];
     }
 }

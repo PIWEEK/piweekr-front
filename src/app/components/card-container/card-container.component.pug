@@ -4,4 +4,8 @@ button(type="button")
     +icon('icon-add')
     span Add idea
 section.card-container
-    card(*ngFor="let item of itemsList", [card]="item")
+    card(
+        *ngFor="let item of itemsList",
+        [card]="item",
+        [owner-menu]="ownerMenu"
+    )

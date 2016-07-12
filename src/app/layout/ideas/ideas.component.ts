@@ -13,17 +13,61 @@ import {CardContainerComponent} from "../../components/card-container/card-conta
 export class IdeasComponent {
     @Input() selectedItem: any;
 
-    type: string = 'Ideas';
+    static type: string = 'Ideas';
     items = [];
+    ownerMenu: Array<Object>;
 
     constructor(private _api: ApiService) {
         this._api.ideas.list().subscribe( ideas =>
             this.items = ideas,
             err => console.log(err)
         );
+
+        this.ownerMenu = [
+            {
+                name: 'Borrar',
+                action: this.deleteAction
+            },
+            {
+                name: 'Editar',
+                action: this.editAction
+            },
+            {
+                name: 'Invitar',
+                action: this.inviteAction
+            },
+            {
+                name: 'Promocionar',
+                action: this.promoteAction
+            }
+        ];
+    }
+
+    ngOnInit() {
+        console.log('IdeasComponent');
     }
 
     handleSelected(item: string) {
         this.selectedItem = item;
     };
+
+    private deleteAction(id: string) {
+        console.log('deleteAction');
+        console.log('id', id);
+    }
+
+    private editAction(id: string) {
+        console.log('editAction');
+        console.log('id', id);
+    }
+
+    private inviteAction(id: string) {
+        console.log('inviteAction');
+        console.log('id', id);
+    }
+
+    private promoteAction(id: string) {
+        console.log('promoteAction');
+        console.log('id', id);
+    }
 }

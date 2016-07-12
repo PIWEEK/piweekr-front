@@ -1,4 +1,13 @@
-.menu Menu
+.menu
+    a(href='') Menu
+    ul.menu
+        li.item(*ngFor='let item of options')
+            a(
+                href='javascript:void(0)',
+                [title]='item.name',
+                (click) = 'item.action(cardId)'
+            ) {{ item.name }}
+
 .data
     .avatar
     .name {{ owner.fullName }}
