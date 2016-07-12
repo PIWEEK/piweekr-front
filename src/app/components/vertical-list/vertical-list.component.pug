@@ -2,4 +2,11 @@ nav.vertical-list
     ul
         li.title {{type}}
         li(*ngFor="let item of itemsList")
-            a([ngClass]="{'active': selectedItem === item.uuid}", (click)="onSelectItem(item.uuid)", title="{{item.title}}", role="button") {{item.title}}
+            a(
+                [ngClass]="{'active': selectedItem === item.uuid}",
+                [routerLink]="",
+                [fragment]="item.uuid",
+                (click)="onSelectItem(item.uuid)",
+                title="{{item.title}}",
+                role="button"
+            ) {{item.title}}
