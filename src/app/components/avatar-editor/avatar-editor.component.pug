@@ -1,0 +1,18 @@
+.avatar-editor
+  .avatar-editor__part.avatar__head
+    a.btn-head__left(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('head', 'left')") &lt;
+    .image
+      img(src="/assets/avatar/head/head_{{headId}}.png")
+    a.btn-head__right(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('head', 'right')") &gt;
+
+  .avatar-editor__part.avatar__body
+    a.btn-body__left(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('body', 'left')") &lt;
+    .image
+      img(src="/assets/avatar/body/body_{{bodyId}}.png")
+    a.btn-body__right(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('body', 'right')") &gt;
+
+  .avatar-editor__part.avatar__legs
+    a.btn-legs__left(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('legs', 'left')") &lt;
+    .image
+      img(src="/assets/avatar/legs/legs_{{legsId}}.png")
+    a.btn-legs__right(*ngIf="editable === true", href="javascript:void(0)", (click)="changeElement('legs', 'right')") &gt;

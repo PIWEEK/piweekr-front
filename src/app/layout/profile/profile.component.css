@@ -1,0 +1,9 @@
+section {
+    text-align: center;
+}
+
+avatar-editor {
+    display: block;
+    width: 20vw;
+    margin: 3em auto;
+}

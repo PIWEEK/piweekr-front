@@ -1,3 +1,5 @@
+@import '../../../globals.css';
+
 section {
     text-align: center;
     margin-top: 10rem;
@@ -13,11 +15,11 @@ section {
 
 .site-description span {
     display: block;
-    font-size: 0.5em;
+    font-size: var(--font-small);
 }
 
 .next-edition {
-    color: #ffb093;
+    color: var(--text);
 
     & span {
         display: block;

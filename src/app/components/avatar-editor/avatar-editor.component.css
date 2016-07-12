@@ -1,0 +1,49 @@
+.avatar-editor {
+    vertical-align: center;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar__head {
+    margin-bottom: -3px;
+}
+
+.avatar__legs {
+    margin-top: -30px;
+}
+
+.avatar__legs img {
+    z-index: -1;
+}
+
+.image {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.image img {
+    position: relative;
+}
+
+.avatar-editor__part {
+    display: flex;
+}
+
+
+.btn-head__left,
+.btn-head__right,
+.btn-body__left,
+.btn-body__right,
+.btn-legs__left,
+.btn-legs__right
+ {
+     font-family: cursive;
+     text-decoration: none;
+     color: orange;
+     font-size: 40px;
+     padding: 4px;
+ }
