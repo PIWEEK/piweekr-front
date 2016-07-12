@@ -1,6 +1,5 @@
 import {Component} from "@angular/core";
 import {NavbarComponent} from "../../components/navbar/navbar.component";
-import {AboutComponent} from "../../components/about/about.component";
 import {CountDownComponent} from "../../components/countdown/countdown.component";
 
 import moment from 'moment';
