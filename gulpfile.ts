@@ -15,6 +15,7 @@ const plumber = require('gulp-plumber');
 gulp.task('html', () => {
   return gulp.src('src/**/*.pug')
   .pipe(pug())
+  .pipe(plumber())
   .pipe(gulp.dest("build"));
 });
 
