@@ -1,4 +1,9 @@
 @import '../../../globals.css';
 
 :host {
+    margin: 5rem 0;
+}
+
+h1 {
+    font-size: var(--font-xxlarge);
 }
