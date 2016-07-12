@@ -1,18 +1,7 @@
 section {
     margin-top: 5em;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 22em;
+login-form {
+    width: 35vw;
     margin: auto;
-
-    & * {
-        margin-top: 0.2em;
-    }
-
-    & label, & button {
-        margin-top: 0.7em;
-    }
 }
