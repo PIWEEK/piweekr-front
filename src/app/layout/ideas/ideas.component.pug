@@ -1,2 +1,5 @@
+include ../../../mixins
 vertical-list([type]="type", [items]="items", (currentItem)="handleSelected($event)")
+    +comploader
 card-container([items]="items", [selectedItem]="selectedItem")
+    +comploader

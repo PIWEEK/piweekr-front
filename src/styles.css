@@ -1,6 +1,7 @@
 @import 'globals.css';
 @import 'styles/icons.css';
 @import 'styles/loader.css';
+@import 'styles/component-loader.css';
 @import '../node_modules/normalize.css/normalize.css';
 
 * {

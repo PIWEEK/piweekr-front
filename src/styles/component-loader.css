@@ -1,0 +1,27 @@
+.comp-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    & .comp-loader {
+        height: 2rem;
+        width: 2rem;
+        & .outer-loader {
+            transform-origin: center center;
+            animation: rotate 1s ease-in-out infinite;
+        }
+        & .inner-loader {
+            transform-origin: center center;
+            animation: rotate 1s ease-in-out infinite reverse;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
