@@ -18,9 +18,9 @@ export class AvatarEditorComponent {
 
     kkfuti: boolean = false;
 
-    @Output() headChange: EventEmitter<number> = new EventEmitter();
-    @Output() bodyChange: EventEmitter<number> = new EventEmitter();
-    @Output() legChange: EventEmitter<number> = new EventEmitter();
+    @Output() headChange: EventEmitter<number> = new EventEmitter<number>();
+    @Output() bodyChange: EventEmitter<number> = new EventEmitter<number>();
+    @Output() legChange: EventEmitter<number> = new EventEmitter<number>();
 
     private headId = 1;
     private bodyId = 1;
