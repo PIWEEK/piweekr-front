@@ -4,5 +4,4 @@ button(type="button")
     +icon('icon-add')
     span Add idea
 section.card-container
-    .selected-item(*ngIf="selectedItem" ) {{selectedItem}}
-    .card(*ngFor="let item of itemsList") {{item.title}}
+    card(*ngFor="let item of itemsList", [card]="item")

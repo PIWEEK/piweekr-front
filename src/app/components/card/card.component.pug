@@ -1,0 +1,8 @@
+header
+    .title {{ card.title }}
+    owner([owner]="card.owner")
+.desc {{ card.description }}
+invited([inviteds]="card.inviteds")
+comments-container([comments]="card.commentsCount", [reactions]="card.reactionsCounts")
+watch([card-id]="card.uuid")
+fork([card-id]="card.uuid")
