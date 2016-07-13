@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommentListComponent } from '../comment-list/comment-list.component';
 import { CommentInputComponent } from '../comment-input/comment-input.component';
 import { KeysFilter } from '../../pipes';
+import { UserSessionService } from "../../services/user-session.service";
 
 const BASE_DIR = './app/components/comments-container';
 
@@ -21,7 +22,9 @@ export class CommentsContainerComponent {
 
     showComments: boolean = false;
 
-    handleShowComments() {
-        this.showComments = true;
+    constructor(private session: UserSessionService) {}
+
+    handleToggleComments() {
+        this.showComments = !this.showComments;
     }
 }

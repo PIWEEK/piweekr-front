@@ -7,7 +7,7 @@ export class Comment {
     createdAt: moment.Moment;
     content: string;
 
-    constructor(data: {uuid: string,
+    constructor(data: {uuid?: string,
                        owner: any,
                        createdAt?: string,
                        content: string}) {
