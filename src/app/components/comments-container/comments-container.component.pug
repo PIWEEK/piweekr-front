@@ -5,6 +5,7 @@ include ../../../mixins
       .reaction(*ngFor='let reaction of reactions | KeysFilter')
         span.emoji([ngClass]='"emoji-" + reaction.key')
         span.counter {{ reaction.value }}
+
     a.comments(href="#")
       span 
         +icon('icon-message')

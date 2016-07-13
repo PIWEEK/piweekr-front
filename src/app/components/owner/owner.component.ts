@@ -17,7 +17,17 @@ export class OwnerComponent {
     @Input('owner-options') options: Object;
     @Input('card-id') cardId: string;
 
+    isMenuVisible: boolean = false;
+
     ngOnChanges() {
         this.options = this.options || [];
+    }
+
+    toggleMenu(event) {
+        this.isMenuVisible = !this.isMenuVisible;
+    }
+
+    closeMenu(event) {
+        this.isMenuVisible = false;
     }
 }

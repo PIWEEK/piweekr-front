@@ -1,19 +1,22 @@
+doctype html
 include ../../../mixins
 
 header
+  .radius-wrapper
     .avatar
       avatar-editor(
-          editable="false",
-          avatar-type="small-head",
-          [avatar]="card.owner.avatar",
-          background="black"
-      )
-    .title {{ card.title }}
-    owner(
-        [owner]="card.owner",
-        [owner-options]="ownerMenu",
-        [card-id]="card.uuid",
-    )
+        editable="false",
+        avatar-type="medium-head",
+        [avatar]="card.owner.avatar",
+        background="black")
+  .title {{ card.title }}
+  owner(
+    #owner,
+    [owner]="card.owner",
+    [owner-options]="ownerMenu",
+    [card-id]="card.uuid",
+    (mouseleave)="owner.closeMenu()")
+
 .desc {{ card.description }}
 invited([inviteds]="card.inviteds")
 comments-container(

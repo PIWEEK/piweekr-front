@@ -1,8 +1,10 @@
 include ../../../mixins
 
-a.options(href="#")
+a.options(href="javascript:void(0)",
+         (click)="toggleMenu($event)",
+         [ngClass]="{'is-visible': isMenuVisible}")
   +icon('icon-more_vert')
-ul.menu
+ul.menu([ngClass]="{'is-visible': isMenuVisible}")
   li.item(*ngFor='let item of options')
     a(href='javascript:void(0)', 
       [title]='item.name',

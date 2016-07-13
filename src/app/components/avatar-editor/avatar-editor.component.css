@@ -34,10 +34,10 @@
 }
 
 :host[avatar-type="medium-head"] {
-    height: 84px;
-    width: 84px;
+    height: 52px;
+    width: 52px;
     & .avatar-editor {
-        transform: scale(0.7);
+        transform: scale(0.43);
         transform-origin: top left;
         height: 120px;
         position: absolute;
