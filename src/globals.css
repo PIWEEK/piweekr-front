@@ -38,6 +38,9 @@
     --normal: 400;
     --light: 300;
 
+    --error-background: #FCC;
+    --error-text: #F00;
+
     --button: {
         background:none;
         border:none;

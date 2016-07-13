@@ -15,15 +15,22 @@ export class LoginFormComponent {
     model: LoginAuth = new LoginAuth();
     submitted: boolean = false;
 
-    constructor(private api: ApiService, private router: Router) {}
+    errorMessage: string;
+
+    constructor(private api: ApiService, private router: Router) {
+        this.model.userName = "user-1";
+        this.model.password = "123123";
+    }
 
     onSubmit() {
         this.submitted = true;
-        console.log(JSON.stringify(this.model));
 
         this.api.auth.login(this.model).subscribe(
-            user => this.router.navigate(['/']),
-            err => console.error(">>> ERROR", err)
+            user => {
+                this.onHideLogin();
+                this.router.navigate(['/']);
+            },
+            err => this.errorMessage = `${err}`
         );
     }
     onHideLogin() {

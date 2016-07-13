@@ -4,11 +4,12 @@ import { Observable } from 'rxjs/Observable';
 
 import { ApiCommons } from './api.commons';
 import { Comment } from '../../model/comment';
+import { UserSessionService } from '../user-session.service';
 
 @Injectable()
 export class CommentsApiService extends ApiCommons {
-    constructor(http: Http) {
-        super(http);
+    constructor(http: Http, session: UserSessionService) {
+        super(http, session);
     }
 
     list(entity: string, uuid: string): Observable<Comment[]> {

@@ -35,3 +35,16 @@ button {
     @apply --button-primary;
     margin-top: 2em;
 }
+
+.error {
+    background-color: var(--error-background);
+    border: 1px solid red;
+    border-radius: 2px;
+    color: var(--error-text);
+    margin-top: 1rem;
+    padding: 1rem;
+    
+    & p {
+        margin: 0;
+    }
+}

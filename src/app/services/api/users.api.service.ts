@@ -5,11 +5,12 @@ import 'rxjs/add/operator/map';
 
 import { ApiCommons } from './api.commons';
 import { User } from '../../model/user';
+import { UserSessionService } from '../user-session.service';
 
 @Injectable()
 export class UserApiService extends ApiCommons {
-    constructor(http: Http) {
-        super(http);
+    constructor(http: Http, session: UserSessionService) {
+        super(http, session);
     }
 
     list(): Observable<User[]> {
