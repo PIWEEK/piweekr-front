@@ -2,6 +2,7 @@
 ///<reference path="../../typings/index.d.ts"/>
 
 import { bootstrap } from '@angular/platform-browser-dynamic';
+import { provide } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { provideForms } from '@angular/forms';
 import { MainComponent } from './layout/main/main.component';
@@ -16,6 +17,7 @@ bootstrap(MainComponent, [
     API_PROVIDERS,
     UserSessionService,
     provideForms(),
-    Title
+    Title,
+    provide(Window, { useValue: window })
 ])
 .catch(err => console.error(err));

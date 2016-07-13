@@ -5,7 +5,7 @@ button(type="button")
 section.card-container
     card(
         *ngFor="let item of itemsList",
-        id="{{ item.uuid }}",
+        [attr.data-card-id]="item.uuid",
         [card]="item",
         [owner-menu]="ownerMenu"
     )

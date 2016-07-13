@@ -3,9 +3,8 @@ nav.vertical-list
         li.title {{type}}
         li(*ngFor="let item of itemsList")
             a(
+                hrtef="javascriot:void(0)",
                 [ngClass]="{'active': selectedItem === item.uuid}",
-                [routerLink]="",
-                [fragment]="item.uuid",
                 (click)="onSelectItem(item.uuid)",
                 title="{{item.title}}",
                 role="button"
