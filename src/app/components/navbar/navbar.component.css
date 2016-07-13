@@ -13,7 +13,6 @@
 a {
     background: transparent;
     color: currentColor;
-    font-weight: var(--light);
     padding: 1rem;
     text-decoration: none;
     transition: background .2s;

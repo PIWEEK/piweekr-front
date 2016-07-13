@@ -24,5 +24,9 @@ form(
     )
     button(
         type="submit",
-        value="login"
+        value="login",
+        [disabled]="submitted"
     ) Login
+
+.error(*ngIf="errorMessage")
+  p {{errorMessage}}

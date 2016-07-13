@@ -2,37 +2,72 @@ import '../../rxjs-operators';
 
 import { Http, Headers, RequestMethod, Request, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { API_ROUTES } from '../api.routes';
+import { URL_BASE, API_ROUTES } from '../api.routes';
+import { UserSessionService } from "../user-session.service";
 
 export class ApiCommons {
     constructor (
-        private _http: Http
+        protected http: Http,
+        protected session: UserSessionService
     ) {}
 
-    get(urlId: string, urlParams?: any[], data?: any): Observable<any> {
-        const base = "http://localhost:5000/api/v1";
-        const url = API_ROUTES[urlId](base, urlParams);
+    private req(method: RequestMethod, urlId: string, urlParams?: any[], data?: any): Observable<any> {
+        try {
+            const params = urlParams || [];
+            const route = API_ROUTES[urlId];
 
-        const options = {
-            method: RequestMethod.Get,
-            url,
-            body: null,
-            headers: new Headers({
+            if (!route) {
+                return this.logError(new Error(`Can't find the route ${urlId}`));
+            }
+
+            const url = route(URL_BASE, ...urlParams);
+
+            let headers = {
                 'Content-Type': 'application/json'
-            })
-        };
+            };
 
-        if (data) {
-            options.body = (typeof data === 'string') ? data : JSON.stringify(data);
+            const token = this.session.token;
+            if (token) {
+                headers['Authorization'] = `Bearer ${token}`;
+            }
+
+            const options = {
+                method: method,
+                url,
+                body: null,
+                headers: new Headers(headers)
+            };
+
+            if (data) {
+                options.body = (typeof data === 'string') ? data : JSON.stringify(data);
+            }
+
+            return this.http
+                .request(new Request(options))
+                .map(res => res.json())
+                .catch(this.logError);
+        } catch (err) {
+            return this.logError(err);
         }
+    }
 
-        return this._http
-                   .request(new Request(options))
-                   .map(res => res.json())
-                   .catch(this.logError);
+    get(urlId: string, urlParams?: any[]): Observable<any> {
+        return this.req(RequestMethod.Get, urlId, urlParams);
+    }
+
+    post(urlId: string, urlParams?: any[], data?: any): Observable<any> {
+        return this.req(RequestMethod.Post, urlId, urlParams, data);
+    }
+
+    put(urlId: string, urlParams?: any[], data?: any): Observable<any> {
+        return this.req(RequestMethod.Put, urlId, urlParams, data);
+    }
+
+    delete(urlId: string, urlParams?: any[]): Observable<any> {
+        return this.req(RequestMethod.Delete, urlId, urlParams);
     }
 
     private logError (error: Error) {
-        return Observable.throw(error || 'There was an error with the request');
+        return Observable.throw(error || new Error('There was an error with the request'));
     }
 }

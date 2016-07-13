@@ -1,14 +1,15 @@
 import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { UserSessionService } from "../../services/user-session.service";
-import {LoginFormComponent} from "../../components/login/login-form.component";
+import { LoginFormComponent } from "../../components/login/login-form.component";
+import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
 import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: "nav-bar",
     templateUrl: "./app/components/navbar/navbar.component.html",
     styleUrls: ["./app/components/navbar/navbar.component.css"],
-    directives: [ROUTER_DIRECTIVES, LoginFormComponent]
+    directives: [ROUTER_DIRECTIVES, LoginFormComponent, AvatarEditorComponent]
 })
 
 export class NavbarComponent {

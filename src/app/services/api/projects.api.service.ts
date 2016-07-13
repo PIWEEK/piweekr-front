@@ -4,11 +4,12 @@ import { Observable } from 'rxjs/Observable';
 
 import { ApiCommons } from './api.commons';
 import { Project } from '../../model/project';
+import { UserSessionService } from '../user-session.service';
 
 @Injectable()
 export class ProjectApiService extends ApiCommons {
-    constructor(http: Http) {
-        super(http);
+    constructor(http: Http, session: UserSessionService) {
+        super(http, session);
     }
 
     list(): Observable<Project[]> {

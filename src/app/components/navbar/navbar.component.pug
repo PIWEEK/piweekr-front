@@ -23,10 +23,7 @@ nav.nav-bar
         avatar-editor(
             editable="false",
             avatar-type="small-head",
-            [head]="session.currentUser.avatar.head",
-            [body]="session.currentUser.avatar.body",
-            [legs]="session.currentUser.avatar.legs",
-            [background]="session.currentUser.avatar.background")
+            [avatar]="session.currentUser.avatar")
 
         a(
             [routerLink]="['/profile']",

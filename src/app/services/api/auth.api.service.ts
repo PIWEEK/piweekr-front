@@ -6,7 +6,7 @@ import { ApiCommons } from './api.commons';
 
 import { User } from '../../model/user';
 import { LoginAuth } from '../../model/auth';
-import { UserSessionService } from '../../services/user-session.service';
+import { UserSessionService } from '../user-session.service';
 
 const HARDCODED_USER = {
     userName: "alotor",
@@ -20,20 +20,13 @@ const HARDCODED_USER = {
 
 @Injectable()
 export class AuthApiService extends ApiCommons {
-    constructor(http: Http, private session: UserSessionService) {
-        super(http);
+    constructor(http: Http, session: UserSessionService) {
+        super(http, session);
     }
 
     login(auth: LoginAuth): Observable<User> {
-        //const req$ = this.post("login", auth);
-        const req$ = Observable.of(HARDCODED_USER);
-
-        req$.subscribe(
-            (json) => this.session.store(json)
-        );
-
-        return req$.map(
-            json => new User(json)
-        );
+        return this.post("login", [], auth)
+                   .do(json => this.session.store(json))
+                   .map(json => new User(json));
     }
 }

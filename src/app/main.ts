@@ -4,7 +4,7 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { provide } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { provideForms } from '@angular/forms';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { MainComponent } from './layout/main/main.component';
 import { APP_ROUTER_PROVIDERS } from './router/app.routes';
 import { API_PROVIDERS } from './services/api.service';
@@ -16,6 +16,7 @@ bootstrap(MainComponent, [
     HTTP_PROVIDERS,
     API_PROVIDERS,
     UserSessionService,
+    disableDeprecatedForms(),
     provideForms(),
     Title,
     provide(Window, { useValue: window })

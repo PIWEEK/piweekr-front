@@ -1,6 +1,7 @@
 import { Component, Input, ElementRef } from '@angular/core';
 
 import { CardComponent } from '../../components/card/card.component';
+import { CardFormComponent } from '../../components/card-form/card-form.component';
 
 const BASE_DIR = './app/components/card-container/';
 
@@ -8,21 +9,20 @@ const BASE_DIR = './app/components/card-container/';
     selector: "card-container",
     templateUrl: `${BASE_DIR}/card-container.component.html`,
     styleUrls: [`${BASE_DIR}/card-container.component.css`],
-    directives: [CardComponent]
+    directives: [CardComponent, CardFormComponent]
 })
 
 export class CardContainerComponent {
+    @Input() type: string;
     @Input('items') itemsList: any;
     @Input() selectedItem: string;
     @Input('owner-menu') ownerMenu: Array<Object>;
-
     private headerHeight: number = 120;
 
     constructor(private window: Window, private elementRef: ElementRef) {}
 
     ngOnChanges() {
-        console.log('changeeee', this.selectedItem);
-        if(this.selectedItem) {
+        if (this.selectedItem) {
             this.goToCard(this.selectedItem);
         }
     }
@@ -33,5 +33,9 @@ export class CardContainerComponent {
         let goTo = window.scrollY + ELEMENT.getBoundingClientRect().top - this.headerHeight;
 
         window.scrollTo(0, goTo);
+    }
+    isItemFormVisible = false;
+    addNewItem() {
+        this.isItemFormVisible = true;
     }
 }

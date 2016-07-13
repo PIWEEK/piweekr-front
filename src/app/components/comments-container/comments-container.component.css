@@ -7,8 +7,8 @@
 .feedback {
     display: flex;
     align-items: center;
-    padding: 0.4em 2em;
-    height: 3em;
+    padding: .4rem 2rem;
+    height: 3rem;
 }
 
 .comments, .reactions {
@@ -20,21 +20,20 @@
     display: flex;
     align-items: center;
     border: 1px solid var(--gray500);
-    padding: 0.2em 0.4em;
+    padding: .2rem .4rem;
     border-radius: 10px;
     background-color: var(--gray100);
     margin-top: 1px;
-    margin-right: 0.3em;
+    margin-right: .3rem;
 
     & .emoji {
-        height: 1.3em;
-        width: 1.3em;
-        margin-right: 0.2em;
+        height: 1.3rem;
+        width: 1.3rem;
+        margin-right: .2rem;
     }
 
     & .counter {
-        font-size: 0.9rem;
-        font-weight: bold;
+        font-size: .9rrem;
         color: var(--primary);
     }
 }
@@ -45,17 +44,16 @@
 
     & .icon-message {
         fill: var(--primary);
-        margin-bottom: -0.2em;
+        margin-bottom: -.2rem;
     }
 
     & .counter {
-        font-weight: bold;
-        font-size: 0.9em;
-        padding-left: 0.2em;
+        font-weight: var(--bold);
+        font-size: .9rem;
+        padding-left: .2rem;
     }
 
     & .content {
-        font-weight: bold;
         margin-bottom: 2px;
         margin-left: 5px;
     }

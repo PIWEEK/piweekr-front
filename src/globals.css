@@ -16,7 +16,7 @@
     --gray200: #EEEEEE;
     --gray100: #F5F5F5;
     --whitish: #FAFAFA;
-    --white: #FAFAFA;
+    --white: #FFFFFF;
 
     --primary: #761cec;
     --primary-dark: #512DA8;
@@ -36,7 +36,10 @@
 
     --bold: 600;
     --normal: 400;
-    --light: 100;
+    --light: 300;
+
+    --error-background: #FCC;
+    --error-text: #F00;
 
     --button: {
         background:none;
@@ -50,6 +53,9 @@
         transition: background .2s;
         &:hover {
             background-color: var(--primary-dark);
+        }
+        &:disabled {
+            background-color: var(--gray300);
         }
     };
     --button-action: {

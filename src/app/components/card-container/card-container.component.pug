@@ -1,11 +1,19 @@
 include ../../../mixins
 
-button(type="button")
+button(
+    type="button",
+    (click)="addNewItem()"
+)
     +icon('icon-add')
 section.card-container
+    card-form(
+        [ngClass]="{'is-visible': isItemFormVisible}",
+        [type]="type"
+    )
     card(
         *ngFor="let item of itemsList",
         [attr.data-card-id]="item.uuid",
         [card]="item",
         [owner-menu]="ownerMenu"
     )
+        +comploader
