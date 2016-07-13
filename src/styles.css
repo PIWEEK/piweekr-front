@@ -15,3 +15,18 @@ body {
 a {
     text-decoration: none;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 3em;
+    padding: 0 1em;
+    margin-top: 1em;
+    transition: all .2s;
+}
