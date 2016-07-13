@@ -23,15 +23,19 @@ export class LoginFormComponent {
     }
 
     onSubmit() {
-        this.submitted = true;
-
-        this.api.auth.login(this.model).subscribe(
-            user => {
-                this.onHideLogin();
-                this.router.navigate(['/']);
-            },
-            err => this.errorMessage = `${err}`
-        );
+        if (!this.submitted) {
+            this.api.auth.login(this.model).subscribe(
+                user => {
+                    this.onHideLogin();
+                    this.router.navigate(['/']);
+                },
+                err => {
+                    this.errorMessage = `${err}`;
+                    this.submitted = false;
+                }
+            );
+            this.submitted = true;
+        }
     }
     onHideLogin() {
         this.loginVisibility.emit(null);

@@ -13,6 +13,8 @@ export const routes: RouterConfig = [
     {path: 'projects',    component: ProjectsComponent},
 ];
 
+export const PRECOMPILE_ARRAY = routes.map(v => v.component);
+
 export const APP_ROUTER_PROVIDERS = [
     provideRouter(routes)
 ];

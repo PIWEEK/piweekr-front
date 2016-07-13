@@ -22,7 +22,6 @@ export class CardContainerComponent {
     constructor(private window: Window, private elementRef: ElementRef) {}
 
     ngOnChanges() {
-        console.log('changeeee', this.selectedItem);
         if(this.selectedItem) {
             this.goToCard(this.selectedItem);
         }
