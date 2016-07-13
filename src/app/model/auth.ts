@@ -1,5 +1,5 @@
 
 export class LoginAuth {
-    userName: string;
+    username: string;
     password: string;
 }

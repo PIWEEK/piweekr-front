@@ -13,16 +13,16 @@ export class Avatar {
 }
 
 export class User {
-    userName: string;
+    username: string;
     email: string;
     fullName: string;
     avatar: Avatar;
 
-    constructor(data: { userName: string,
+    constructor(data: { username: string,
                         email: string,
                         fullName: string,
                         avatar: any}) {
-        this.userName = data.userName;
+        this.username = data.username;
         this.email = data.email;
         this.fullName = data.fullName;
         this.avatar = new Avatar(data.avatar);

@@ -15,7 +15,7 @@ export class CommentComponent {
     @Input() comment: Comment = new Comment({
         uuid: "aaaaa",
         owner: {
-            userName: "alotor",
+            username: "alotor",
             email: "fake@gmail.com",
             fullName: "Fake User",
             avatar: {
