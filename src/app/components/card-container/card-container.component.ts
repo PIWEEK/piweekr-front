@@ -28,8 +28,6 @@ export class CardContainerComponent {
     }
 
     private goToCard(id: string) {
-        debugger;
-
         let ELEMENT = this.elementRef.nativeElement;
         ELEMENT = ELEMENT.querySelector(`[data-card-id="${id}"]`);
 
