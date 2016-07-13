@@ -5,6 +5,9 @@
     color: var(--white);
     flex-grow: 0;
     flex-shrink: 0;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    position: fixed;
     width: 20vw;
 }
 

@@ -2,6 +2,7 @@
 
 :host {
     flex: 1;
+    margin-left: 20vw;
 }
 
 .card-container {
