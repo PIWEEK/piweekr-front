@@ -22,7 +22,7 @@ export class CardContainerComponent {
     constructor(private window: Window, private elementRef: ElementRef) {}
 
     ngOnChanges() {
-        if(this.selectedItem) {
+        if (this.selectedItem) {
             this.goToCard(this.selectedItem);
         }
     }
