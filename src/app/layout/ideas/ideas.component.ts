@@ -18,10 +18,6 @@ export class IdeasComponent {
     ownerMenu: Array<Object>;
 
     constructor(private _api: ApiService) {
-        this._api.ideas.list().subscribe( ideas =>
-            this.items = ideas,
-            err => console.log(err)
-        );
 
         this.ownerMenu = [
             {
@@ -41,6 +37,14 @@ export class IdeasComponent {
                 action: this.promoteAction
             }
         ];
+    }
+
+    ngOnInit() {
+        console.log(">> Retrieving Ideas");
+        this._api.ideas.list().subscribe( ideas =>
+            this.items = ideas,
+            err => console.log(err)
+        );
     }
 
     handleSelected(item: string) {

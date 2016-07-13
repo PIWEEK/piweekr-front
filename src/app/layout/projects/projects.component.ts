@@ -18,13 +18,6 @@ export class ProjectsComponent {
     ownerMenu: Array<Object>;
 
     constructor(private _api: ApiService) {
-        this._api.projects.list().subscribe( projects =>
-            {
-                this.items = projects;
-            },
-            err => console.log(err)
-        );
-
         this.ownerMenu = [
             {
                 name: 'Borrar',
@@ -43,6 +36,15 @@ export class ProjectsComponent {
                 action: this.promoteAction
             }
         ];
+    }
+
+    ngOnInit() {
+        this._api.projects.list().subscribe( projects =>
+            {
+                this.items = projects;
+            },
+            err => console.log(err)
+        );
     }
 
     handleSelected(item: string) {
