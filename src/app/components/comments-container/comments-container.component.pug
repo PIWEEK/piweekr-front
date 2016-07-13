@@ -6,8 +6,11 @@ include ../../../mixins
         span.emoji([ngClass]='"emoji-" + reaction.key')
         span.counter {{ reaction.value }}
 
-    a.comments(href="#")
+    a.comments(href="javascript:void(0)", (click)="handleShowComments()")
       span 
         +icon('icon-message')
       span.counter {{ comments }}
       span.content comentarios
+
+comment-list(*ngIf="showComments", [entity]="entity", [uuid]="uuid")
+comment-input(*ngIf="showComments")

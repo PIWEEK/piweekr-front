@@ -7,42 +7,27 @@ section(*ngIf="session.currentUser")
 
   avatar-editor(
     editable="false", 
-    [head]="session.currentUser.avatar.head", 
-    [body]="session.currentUser.avatar.body", 
-    [legs]="session.currentUser.avatar.legs", 
-    [background]="session.currentUser.avatar.background")
+    [avatar]="session.currentUser.avatar")
 
   avatar-editor(
     editable="false", 
     avatar-type="medium-body", 
-    [head]="session.currentUser.avatar.head", 
-    [body]="session.currentUser.avatar.body", 
-    [legs]="session.currentUser.avatar.legs", 
-    [background]="session.currentUser.avatar.background")
+    [avatar]="session.currentUser.avatar")
 
   avatar-editor(
     editable="false",
     avatar-type="small-body", 
-    [head]="session.currentUser.avatar.head", 
-    [body]="session.currentUser.avatar.body", 
-    [legs]="session.currentUser.avatar.legs", 
-    [background]="session.currentUser.avatar.background")
+    [avatar]="session.currentUser.avatar")
 
   avatar-editor(
     editable="false", 
     avatar-type="medium-head", 
-    [head]="session.currentUser.avatar.head", 
-    [body]="session.currentUser.avatar.body", 
-    [legs]="session.currentUser.avatar.legs", 
-    [background]="session.currentUser.avatar.background")
+    [avatar]="session.currentUser.avatar")
 
   avatar-editor(
     editable="false", 
     avatar-type="small-head", 
-    [head]="session.currentUser.avatar.head", 
-    [body]="session.currentUser.avatar.body", 
-    [legs]="session.currentUser.avatar.legs", 
-    [background]="session.currentUser.avatar.background")
+    [avatar]="session.currentUser.avatar")
 
 
   

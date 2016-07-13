@@ -1,3 +1,13 @@
-.co
-    .author {{ comment.author }}
-    .author {{ comment.text }}
+.author 
+  avatar-editor(
+    editable="false",
+    avatar-type="small-body", 
+    [head]="comment.owner.avatar.head",
+    [body]="comment.owner.avatar.body",
+    [legs]="comment.owner.avatar.legs")
+
+.content
+  .header
+    span.author {{ comment.owner.fullName }}
+    p.date on {{ comment.createdAt }}
+  p.text {{ comment.content }}

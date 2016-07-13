@@ -13,6 +13,7 @@ const BASE_DIR = './app/components/card-container/';
 })
 
 export class CardContainerComponent {
+    @Input() entity: string;
     @Input() type: string;
     @Input('items') itemsList: any;
     @Input() selectedItem: string;

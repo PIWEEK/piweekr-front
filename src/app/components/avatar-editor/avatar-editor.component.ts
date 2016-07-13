@@ -49,7 +49,7 @@ export class AvatarEditorComponent {
     private incrementPart(part:number, increment:number, max:number) {
         const result: number = part + increment;
 
-        if (result > max) {
+        if (result >= max) {
             return 1;
         }
         if (result < 1) {

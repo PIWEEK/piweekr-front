@@ -40,8 +40,12 @@ export class IdeasComponent {
     }
 
     ngOnInit() {
-        this._api.ideas.list().subscribe( ideas =>
-            this.items = ideas,
+        console.log(">> Retrieving ideas");
+        this._api.ideas.list().subscribe(
+            ideas => {
+                console.log(">> Return OK", ideas);
+                this.items = ideas;
+            },
             err => console.log(err)
         );
     }

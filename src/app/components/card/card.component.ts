@@ -24,6 +24,7 @@ const BASE_DIR = './app/components/card';
 })
 
 export class CardComponent {
+    @Input() entity: string;
     @Input() card: Object;
     @Input('owner-menu') ownerMenu: Array<Object>;
 }
