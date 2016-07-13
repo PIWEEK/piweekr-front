@@ -31,8 +31,9 @@ export class CardContainerComponent {
     private goToCard(id: string) {
         let ELEMENT = this.elementRef.nativeElement;
         ELEMENT = ELEMENT.querySelector(`[data-card-id="${id}"]`);
+        let goTo = window.scrollY + ELEMENT.getBoundingClientRect().top - this.headerHeight;
 
-        window.scrollTo(0, ELEMENT.getBoundingClientRect().top - this.headerHeight);
+        window.scrollTo(0, goTo);
     }
     isItemFormVisible = false;
     addNewItem() {
