@@ -2,7 +2,6 @@
 
 :host {
     flex: 1;
-    position: relative;
 }
 
 .card-container {
@@ -15,16 +14,14 @@
 
 button {
     @apply --button;
-    @apply --button-primary;
-    width: 150px;
-    position: absolute;
+    @apply --button-action;
+    box-shadow: 2px 2px 2px var(--gray300);
+    position: fixed;
     right: 2rem;
-    top: 2rem;
-    & svg {
+    top: 10vh;
+    & .icon {
         fill: var(--white);
-        height: 1.2rem;
-        vertical-align: bottom;
-        padding-right: .5rem;
-        width: 1.2rem;
+        height: 2rem;
+        width: 2rem;
     }
 }

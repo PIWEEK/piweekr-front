@@ -14,7 +14,7 @@ ul {
 }
 
 .title {
-    background: var(--gray900);
+    background: var(--primary-dark);
     font-size: var(--font-normal);
     font-weight: var(--bold);
     padding: 1rem;

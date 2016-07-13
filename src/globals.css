@@ -21,10 +21,10 @@
     --primary: #761cec;
     --primary-dark: #512DA8;
     --primary-light: #D1C4E9;
-    
-    --text: #ffb093;
-    --text-dark: color(var(--text) lightness(-20%));
-    --text-light: color(var(--text) lightness(+20%));
+
+    --text: #ffc107;
+    --text-dark: #FFA000;
+    --text-light: #FFECB3;
 
     --font-xxlarge: 3rem;
     --font-xlarge: 1.5rem;
@@ -50,6 +50,15 @@
         transition: background .2s;
         &:hover {
             background-color: var(--primary-dark);
+        }
+    };
+    --button-action: {
+        color: var(--white);
+        cursor: pointer;
+        background-color: var(--text-dark);
+        transition: background .2s;
+        &:hover {
+            background-color: var(--text);
         }
     };
 }
