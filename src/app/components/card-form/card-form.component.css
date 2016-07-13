@@ -2,10 +2,12 @@
 
 :host {
     display: none;
-    background: white;
+    background: var(--white);
     border-radius: 4px;
-    box-shadow: 3px 3px 2px #BDBDBD;
+    box-shadow: 3px 3px 2px var(--gray300);
     padding: 2em 5em;
+    margin: .5rem;
+    margin-bottom: 3rem;
     &.is-visible {
         display: flex;
     }

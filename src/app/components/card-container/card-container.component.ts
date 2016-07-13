@@ -33,6 +33,7 @@ export class CardContainerComponent {
         ELEMENT = ELEMENT.querySelector(`[data-card-id="${id}"]`);
 
         window.scrollTo(0, ELEMENT.getBoundingClientRect().top - this.headerHeight);
+    }
     isItemFormVisible = false;
     addNewItem() {
         this.isItemFormVisible = true;
