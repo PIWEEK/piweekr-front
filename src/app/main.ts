@@ -8,12 +8,14 @@ import { MainComponent } from './layout/main/main.component';
 import { APP_ROUTER_PROVIDERS } from './router/app.routes';
 import { API_PROVIDERS } from './services/api.service';
 import { UserSessionService } from "./services/user-session.service";
+import { Title } from '@angular/platform-browser';
 
 bootstrap(MainComponent, [
     APP_ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     API_PROVIDERS,
     UserSessionService,
-    provideForms()
+    provideForms(),
+    Title
 ])
 .catch(err => console.error(err));

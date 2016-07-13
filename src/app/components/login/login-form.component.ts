@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { LoginAuth } from "../../model/auth";
 import { ApiService } from "../../services/api.service";
@@ -10,6 +10,8 @@ import { ApiService } from "../../services/api.service";
     styleUrls: ["./app/components/login/login-form.component.css"]
 })
 export class LoginFormComponent {
+    @Output() loginVisibility = new EventEmitter<any>();
+
     model: LoginAuth = new LoginAuth();
     submitted: boolean = false;
 
@@ -24,5 +26,7 @@ export class LoginFormComponent {
             err => console.error(">>> ERROR", err)
         );
     }
+    onHideLogin() {
+        this.loginVisibility.emit(null);
+    }
 }
-

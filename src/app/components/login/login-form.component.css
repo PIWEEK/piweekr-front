@@ -1,16 +1,36 @@
 @import '../../../globals.css';
 
 :host {
-    display: block;
-}
-
-.login {
     background: white;
-    padding: 2em 5em;
+    display: block;
     margin: auto;
+    padding: 2em 5em;
+    max-width: 640px;
+    width: 100%;
+    position: relative;
 }
 
-.login form {
+h2 {
+    color: var(--gray900);
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.icon-close {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: var(--gray400);
+    transition: fill .2s;
+    &:hover {
+        fill: var(--text);
+    }
+}
+
+form {
     display: flex;
     flex-direction: column;
 }
