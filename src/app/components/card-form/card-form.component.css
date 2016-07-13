@@ -1,0 +1,62 @@
+@import '../../../globals.css';
+
+:host {
+    display: none;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px #BDBDBD;
+    padding: 2em 5em;
+    &.is-visible {
+        display: flex;
+    }
+}
+
+    /*
+header {
+    align-items: center;
+    background: var(--primary);
+    color: white;
+    display: flex;
+
+    & .title {
+        flex-grow: 1;
+        font-size: 1.2rem;
+        margin-left: 0.5em;
+    }
+}
+
+owner {
+    width: 52px;
+    height: 52px;
+}
+
+.desc {
+    padding: 2em 2em;
+    line-height: 1.8em;
+    word-spacing: 2px;
+}
+
+.actions {
+    display: flex;
+    margin: 0em 2em;
+    border-top: 1px solid #aaa;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    opacity: 0.3;
+    transition: opacity .2s ease-in;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.radius-wrapper {
+    width: 52px;
+    height: 52px;
+}
+
+.avatar {
+    position: absolute;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+}*/

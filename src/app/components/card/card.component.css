@@ -1,60 +1,50 @@
 @import '../../../globals.css';
 
 :host {
-    background: #FAFAFA;
+    background: var(--white);
     border-radius: 4px;
-    box-shadow: 3px 3px 2px #BDBDBD;
+    box-shadow: 3px 3px 2px var(--gray300);
     margin: .5rem;
+    margin-bottom: 3rem;
     overflow: hidden;
     transition: box-shadow .2s ease-in;
-    margin-bottom: 3em;
 }
-    
+
 header {
     align-items: center;
     background: var(--primary);
-    color: white;
+    color: var(--white);
     display: flex;
-
-    & .title {
-        flex-grow: 1;
-        font-size: 1.2rem;
-        margin-left: 0.5em;
-    }
 }
 
-owner {
-    width: 52px;
-    height: 52px;
+.title {
+    flex-grow: 1;
+    font-size: var(--font-large);
+    margin-left: 1rem;
+    font-weight: var(--bold);
 }
 
 .desc {
-    padding: 2em 2em;
-    line-height: 1.8em;
-    word-spacing: 2px;
+    font-weight: var(--light);
+    line-height: 1.8rem;
+    padding: 2rem 2rem;
 }
 
 .actions {
     display: flex;
-    margin: 0em 2em;
-    border-top: 1px solid #aaa;
-    padding-top: 1em;
-    margin-bottom: 1em;
-    opacity: 0.3;
+    margin: 0 2rem;
+    border-top: 1px solid var(--gray300);
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    opacity: .3;
     transition: opacity .2s ease-in;
-
     &:hover {
         opacity: 1;
     }
 }
 
-.radius-wrapper {
-    width: 52px;
-    height: 52px;
-}
-
 .avatar {
-    position: absolute;
+    position: relative;
     border-top-left-radius: 4px;
     overflow: hidden;
 }
