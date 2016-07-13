@@ -16,7 +16,7 @@
     --gray200: #EEEEEE;
     --gray100: #F5F5F5;
     --whitish: #FAFAFA;
-    --white: #FAFAFA;
+    --white: #FFFFFF;
 
     --primary: #761cec;
     --primary-dark: #512DA8;
@@ -34,7 +34,7 @@
     --font-xsmall: .7rem;
     --font-xxsmall: .5rem;
 
-    --bold: 700;
+    --bold: 600;
     --normal: 400;
     --light: 300;
 

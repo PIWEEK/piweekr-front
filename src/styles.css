@@ -21,12 +21,31 @@ form {
     flex-direction: column;
 }
 
-input {
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+input[type="text"] {
     border-top: none;
     border-left: none;
     border-right: none;
-    height: 3em;
-    padding: 0 1em;
-    margin-top: 1em;
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    transition: all .2s;
+}
+
+textarea {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    min-height: 8rem;
+    padding: 0 1rem;
+    resize: vertical;
     transition: all .2s;
 }

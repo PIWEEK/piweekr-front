@@ -1,3 +1,35 @@
+doctype html
+include ../../../mixins
+
 header
-  .radius-wrapper
-      .title Add new {{ type }}
+    .title Add new {{ type }}
+    a.close(
+        href="javascript:void(0)",
+        (click)="closeAddItemForm()"
+    )
+        +icon('icon-close')
+form(
+    method="post",
+    (ngSubmit)="onSubmit()"
+)
+    fieldset
+        input(
+            type="text",
+            placeholder="{{'Add ' + type + ' title'}}",
+            autofocus="true"
+        )
+    fieldset
+        textarea(placeholder="Add a description")
+    fieldset
+        input(
+            type="text",
+            placeholder="Invite users"
+        )
+    fieldset.item-visibility
+        input(
+            type="checkbox",
+            id="item-visibility"
+            checked
+        )
+        label(for="item-visibility")
+        span Is this {{type}} visible?
