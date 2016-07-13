@@ -19,23 +19,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    & .icon-close {
+        fill: var(--white);
+        margin-right: 1rem;
+        transition: fill .2s;
+        height: 2rem;
+        width: 2rem;
+        &:hover {
+            fill: var(--text);
+        }
+    }
 }
 
 .title {
     font-size: var(--font-large);
     font-weight: var(--bold);
     padding: 1rem;
-}
-
-.icon-close {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 1rem;
-    fill: var(--white);
-    transition: fill .2s;
-    &:hover {
-        fill: var(--text);
-    }
 }
 
 form {
@@ -48,6 +47,7 @@ form {
     display: block;
     align-items: center;
     align-content: center;
+    margin: 1rem;
 }
 
 input[type="checkbox"] {
@@ -61,7 +61,7 @@ input[type="checkbox"] {
             font-size: var(--font-xlarge);
             content: "\02716";
             padding: .25rem .5rem;
-            background-color: var(--gray200);
+            background-color: var(--gray100);
             color: var(--gray500);
             box-shadow: inset 2px 2px 2px color(var(--gray300) a(20%));
             transition: background .2s;
@@ -72,9 +72,71 @@ input[type="checkbox"] {
             font-size: var(--font-xlarge);
             content: "\02714";
             padding: .25rem .5rem;
-            background-color: var(--text);
+            background-color: var(--text-light);
             color: var(--text-dark);
             box-shadow: inset 2px 2px 2px color(var(--gray300) a(20%));
         }
     }
+}
+
+.invited-users-wrapper {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.invited-users-single {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding: .25rem .5rem;
+    & .single-invited-name {
+        margin-left: 1rem;
+    }
+    & .icon-close {
+        fill: var(--gray300);
+        transition: fill .2s;
+        margin-left: 1rem;
+        height: 1rem;
+        width: 1rem;
+        &:hover {
+            fill: var(--error-background);
+        }
+    }
+}
+
+.user-invite {
+    position: relative;
+}
+
+.display-users {
+    position: absolute;
+    top: 3rem;
+    background: var(--white);
+    box-shadow: 2px 2px 2px color(var(--gray300) a(20%));
+    z-index: 99;
+    width: 100%;
+}
+.single-user {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    transition: background .2s;
+    transition-delay: .1s;
+    border-bottom: 1px solid var(--gray200);
+    &:hover {
+        background: color(var(--text) a(10%));
+        cursor: pointer;
+    }
+    &:last-child {
+        border: 0;
+    }
+    & .single-user-name {
+        margin-left: 1rem;
+    }
+}
+
+button {
+    @apply --button;
+    @apply --button-action;
+    margin-top: 2em;
 }

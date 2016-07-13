@@ -11,16 +11,19 @@ form(
     )
         +icon('icon-close')
     input(
+        type="text"
         placeholder="User id",
         autofocus="true",
         name="userName",
         [(ngModel)]="model.userName"
+        required
     )
     input(
         placeholder="Password",
         type="password",
         name="password",
         [(ngModel)]="model.password"
+        required
     )
     button(
         type="submit",
