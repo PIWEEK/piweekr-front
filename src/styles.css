@@ -50,3 +50,28 @@ textarea {
     resize: vertical;
     transition: all .2s;
 }
+
+
+/*input, select {
+    background-color: var(--white);
+    border: 0 inset var(--gray300);
+    height: 3em;
+    margin-top: 1em;
+    padding: 0 1em;
+    outline: none;
+}
+
+input {
+    border-bottom-width: 2px;
+    transition: all .5s;
+}
+
+input:focus {
+    border-bottom-color: var(--primary);
+}
+
+select {
+    height: 3em;
+    padding: 0 1em;
+    margin-top: 1em;
+}*/

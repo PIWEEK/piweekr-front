@@ -13,13 +13,17 @@
     width: 100%;
 }
 
+.filters {
+    display:flex;
+    flex-direction: row;
+    margin: .5rem;
+}
+
 button {
     @apply --button;
     @apply --button-action;
+    border-radius: 0 4px 4px 0;
     box-shadow: 2px 2px 2px var(--gray300);
-    position: fixed;
-    right: 2rem;
-    top: 10vh;
     & .icon {
         fill: var(--white);
         height: 2rem;

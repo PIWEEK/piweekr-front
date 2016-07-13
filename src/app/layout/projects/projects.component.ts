@@ -40,7 +40,13 @@ export class ProjectsComponent {
 
     ngOnInit() {
         this._api.projects.list().subscribe(
+<<<<<<< Updated upstream
             projects => this.items = projects,
+=======
+            projects => {
+                this.items = projects;
+            },
+>>>>>>> Stashed changes
             err => console.log(err)
         );
     }

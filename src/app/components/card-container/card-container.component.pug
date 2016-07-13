@@ -1,10 +1,14 @@
+doctype html
 include ../../../mixins
 
-button(
-    type="button",
-    (click)="addNewItem()"
-)
-    +icon('icon-add')
+.filters
+    filters((filtersChange)="propagateModel($event)"))
+    button(
+        type="button",
+        (click)="addNewItem()"
+    )
+        +icon('icon-add')
+
 section.card-container
     card-form(
         [ngClass]="{'is-visible': isItemFormVisible}",
