@@ -18,4 +18,10 @@ export class UserApiService extends ApiCommons {
             jsonList => jsonList.map(u => new User(u))
         ) ;
     }
+
+    update(userId: string, user: {email: string, fullName: string, avatar: Object}): Observable<User> {
+        return this.patch("userDetail", [userId], user).map(
+            u => new User(u)
+        ) ;
+    }
 }

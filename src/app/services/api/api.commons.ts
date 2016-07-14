@@ -66,6 +66,10 @@ export class ApiCommons {
         return this.req(RequestMethod.Put, urlId, urlParams, data);
     }
 
+    patch(urlId: string, urlParams?: any[], data?: any): Observable<any> {
+        return this.req(RequestMethod.Patch, urlId, urlParams, data);
+    }
+
     delete(urlId: string, urlParams?: any[]): Observable<any> {
         return this.req(RequestMethod.Delete, urlId, urlParams);
     }

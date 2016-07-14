@@ -1,49 +1,44 @@
 section(*ngIf="session.currentUser")
     header
         .title Avatar
+        avatar-editor(
+            editable="false",
+            avatar-type="small-head",
+            [head]="session.currentUser.avatar.head",
+            [body]="session.currentUser.avatar.body",
+            [legs]="session.currentUser.avatar.legs"
+        )
     .content
-        .configure
-            .subtitle Configura tu Personaje
-            avatar-editor(
-                [editable]="true",
-                [(head)]="session.currentUser.avatar.head",
-                [(body)]="session.currentUser.avatar.body",
-                [(legs)]="session.currentUser.avatar.legs"
+        avatar-editor(
+            [editable]="true",
+            [(head)]="session.currentUser.avatar.head",
+            [(body)]="session.currentUser.avatar.body",
+            [(legs)]="session.currentUser.avatar.legs"
+        )
+        .form
+            form(
+                method="post",
+                (ngSubmit)="onUpdateUser()"
             )
-        .avatar
-            .subtitle Tu avatar
-            avatar-editor(
-                editable="false",
-                avatar-type="small-head",
-                [avatar]="session.currentUser.avatar"
-            )
+                fieldset
+                    input(
+                        type="text",
+                        placeholder="Usuario",
+                        autofocus="true",
+                        [(ngModel)]="user.fullName",
+                        name="fullname",
+                        required
+                    )
 
-    header
-        .title Tus datos
+                fieldset
+                    input(
+                        type="email",
+                        placeholder="correo@electronico.com",
+                        [(ngModel)]="user.email",
+                        name="email",
+                        required
+                    )
 
-    form(
-        method="post",
-        (ngSubmit)="onUpdateUser()"
-    )
-        fieldset
-            input(
-                type="text",
-                placeholder="Usuario",
-                autofocus="true",
-                [(ngModel)]="user.fullName",
-                name="fullname",
-                required
-            )
-
-        fieldset
-            input(
-                type="email",
-                placeholder="correo@electronico.com",
-                [(ngModel)]="user.email",
-                name="email",
-                required
-            )
-
-        button(
-            type="submit"
-        ) Actualizar
+                button(
+                    type="submit"
+                ) Actualizar

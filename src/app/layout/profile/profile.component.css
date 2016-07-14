@@ -19,19 +19,13 @@ header {
     background: var(--primary);
     color: var(--white);
     display: flex;
-    justify-content: space-between;
 }
 
 .title {
+    flex-grow: 1;
     font-size: var(--font-large);
     font-weight: var(--bold);
     padding: 1rem;
-}
-
-.subtitle {
-    font-size: var(--font-normal);
-    font-weight: var(--bold);
-    margin-top: 1rem;
 }
 
 avatar-editor {
@@ -42,19 +36,17 @@ avatar-editor {
 .content {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 500px;
-    width: 70%;
+    margin-top: 1rem;
 }
 
-.configure, .avatar {
-    margin: 2rem auto;
+.form {
+    background: var(--white);
+    flex-grow: 1;
+    font-weight: var(--light);
+    margin-left: 1rem;
 }
 
 form {
-    background: var(--white);
-    font-weight: var(--light);
     padding: 2rem 2rem;
 }
 
