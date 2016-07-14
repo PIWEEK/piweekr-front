@@ -5,11 +5,13 @@ header
     h1.title {{card.title}}
     button.join-project(
         *ngIf="isCurrentUserInProject()",
-        type="submit"
+        type="submit",
+        (click)="joinProject()"
     ) ¡Confirmo!
     button.interest-project(
         *ngIf="isCurrentUserNotInProject()",
-        type="submit"
+        type="submit",
+        (click)="joinProject()"
     ) ¡Interesante!
 .marketplace-project-inner
     .marketplace-project-owner(

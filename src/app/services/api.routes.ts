@@ -5,5 +5,6 @@ export const API_ROUTES = {
     ideas:      (base) => `${base}/ideas`,
     projects:   (base) => `${base}/projects`,
     comments:   (base, entity, uuid) => `${base}/${entity}/${uuid}/comments`,
-    reactions:  (base, entity, uuid) => `${base}/${entity}/${uuid}/reactions`
+    reactions:  (base, entity, uuid) => `${base}/${entity}/${uuid}/reactions`,
+    joinProject:(base, uuid) => `${base}/projects/${uuid}/participants`
 };

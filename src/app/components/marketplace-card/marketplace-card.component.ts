@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { UserListComponent } from "../../components/user-list/user-list.component";
 import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
 import { UserSessionService } from "../../services/user-session.service";
+import { ApiService } from "../../services/api.service";
 
 const BASE_DIR = './app/components/marketplace-card/';
 
@@ -15,7 +16,8 @@ const BASE_DIR = './app/components/marketplace-card/';
 export class MarketplaceCardComponent {
     @Input() card: any;
     constructor(
-        private session: UserSessionService
+        private session: UserSessionService,
+        private api: ApiService
     ) {}
     isCurrentUserInProject() {
         if (this.session.currentUser) {
@@ -39,4 +41,13 @@ export class MarketplaceCardComponent {
         }
         return false;
     }
+    joinProject() {
+        this.api.projects.join(this.card.uuid).subscribe(
+            result => {
+                console.log(result);
+            },
+            err => console.log(">> ERR ", err)
+        );
+    }
+
 }

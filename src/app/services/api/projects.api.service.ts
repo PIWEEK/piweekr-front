@@ -17,7 +17,8 @@ export class ProjectApiService extends ApiCommons {
             json => json.map(v => new Project(v))
         ) ;
     }
+
+    join(uuid): Observable<Project[]> {
+        return this.post("joinProject", [uuid]);
+    }
 }
-
-
-
