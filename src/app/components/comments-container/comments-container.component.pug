@@ -6,6 +6,10 @@ include ../../../mixins
       .reaction(*ngFor='let reaction of reactions | KeysFilter')
         span.emoji([ngClass]='"emoji-" + reaction.key')
         span.counter {{ reaction.value }}
+      reaction-button(
+        *ngIf="session.currentUser",
+        (onReactionSelected)="handleReactionSelected($event)"
+      )
 
     a.comments(href="javascript:void(0)", (click)="handleToggleComments()")
       span 
