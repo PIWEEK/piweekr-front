@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { UserListComponent } from "../../components/user-list/user-list.component";
 import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
+import { UserSessionService } from "../../services/user-session.service";
 
 const BASE_DIR = './app/components/marketplace-card/';
 
@@ -12,5 +13,30 @@ const BASE_DIR = './app/components/marketplace-card/';
 })
 
 export class MarketplaceCardComponent {
-    @Input() card: Object;
+    @Input() card: any;
+    constructor(
+        private session: UserSessionService
+    ) {}
+    isCurrentUserInProject() {
+        if (this.session.currentUser) {
+            let isOwner = this.card.owner.username === this.session.currentUser.username;
+            let isInProject = this.card.usersInterested.some(it => this.session.currentUser.username === it.username);
+            if (isInProject && !isOwner) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    isCurrentUserNotInProject() {
+        if (this.session.currentUser) {
+            let isOwner = this.card.owner.username === this.session.currentUser.username;
+            let isInProject = this.card.usersInterested.some(it => this.session.currentUser.username === it.username);
+            if (!isInProject && !isOwner) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }

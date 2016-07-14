@@ -27,10 +27,11 @@ export class CardContainerComponent {
     isItemFormVisible = false;
     subscription: Subscription;
 
-    constructor(public session: UserSessionService,
-                private window: Window,
-                private elementRef: ElementRef) {
-    }
+    constructor(
+        public session: UserSessionService,
+        private window: Window,
+        private elementRef: ElementRef
+    ) {}
 
     ngOnChanges() {
         if (this.selectedItem) {

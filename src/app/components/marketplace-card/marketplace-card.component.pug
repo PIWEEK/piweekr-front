@@ -3,7 +3,14 @@ include ../../../mixins
 
 header
     h1.title {{card.title}}
-    button.join-project(type="submit") Confirmo!
+    button.join-project(
+        *ngIf="isCurrentUserInProject()",
+        type="submit"
+    ) ¡Confirmo!
+    button.interest-project(
+        *ngIf="isCurrentUserNotInProject()",
+        type="submit"
+    ) ¡Interesante!
 .marketplace-project-inner
     .marketplace-project-owner(
         [ngStyle]="{'background': card.owner.avatar.background}"
