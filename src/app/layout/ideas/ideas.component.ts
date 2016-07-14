@@ -88,8 +88,6 @@ export class IdeasComponent {
                 it => !!it.forkedFrom === IS_FORKED
             );
         }
-
-        console.log('result', this.items);
     }
 
     handleSelected(item: string) {
