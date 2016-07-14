@@ -1,15 +1,16 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Subject } from 'rxjs/Subject';
 import { ApiService } from "../../services/api.service";
 import { PublishService } from '../../services/publish.service';
-import {VerticalListComponent} from "../../components/vertical-list/vertical-list.component";
-import {CardContainerComponent} from "../../components/card-container/card-container.component";
+import { VerticalListComponent } from "../../components/vertical-list/vertical-list.component";
+import { CardContainerComponent } from "../../components/card-container/card-container.component";
 
 @Component({
     selector: "ideas-layout",
     templateUrl: "./app/layout/ideas/ideas.component.html",
     styleUrls: ["./app/layout/ideas/ideas.component.css"],
     directives: [VerticalListComponent, CardContainerComponent],
-    providers: [PublishService]
+    providers: [PublishService, ApiService]
 })
 
 export class IdeasComponent {
@@ -20,8 +21,14 @@ export class IdeasComponent {
     itemsOriginal = [];
     ownerMenu: Array<Object>;
 
-    constructor(private _api: ApiService, public publishService: PublishService) {
-        this.publishService.publish$.subscribe(item => this.filtersChange(item));
+    editSubject: Subject<string> = new Subject<string>();
+
+    constructor(
+        private _api: ApiService,
+        public publishService: PublishService) {
+        this.publishService.publish$
+            .filter(p => p.type === "filter")
+            .subscribe(p => this.filtersChange(p.item));
 
         this.ownerMenu = [
             {
@@ -30,7 +37,7 @@ export class IdeasComponent {
             },
             {
                 name: 'Editar',
-                action: this.editAction
+                action: this.editAction.bind(this)
             },
             {
                 name: 'Invitar',
@@ -38,7 +45,7 @@ export class IdeasComponent {
             },
             {
                 name: 'Promocionar',
-                action: this.promoteAction
+                action: this.promoteAction.bind(this)
             }
         ];
     }
@@ -100,6 +107,10 @@ export class IdeasComponent {
     private editAction(id: string) {
         console.log('editAction');
         console.log('id', id);
+        this.publishService.publish({
+            type: "edit",
+            uuid: id
+        });
     }
 
     private inviteAction(id: string) {
@@ -108,7 +119,10 @@ export class IdeasComponent {
     }
 
     private promoteAction(id: string) {
-        console.log('promoteAction');
-        console.log('id', id);
+        console.log("API", this._api);
+        this._api.ideas.promote(id).subscribe(
+            result => console.log(result),
+            err => console.log("err", err)
+        );
     }
 }

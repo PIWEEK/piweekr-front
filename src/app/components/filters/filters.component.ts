@@ -56,6 +56,9 @@ export class FiltersComponent {
     }
 
     modelChange() {
-        this.publishService.publish(this.selected);
+        this.publishService.publish({
+            type: "filter",
+            item: this.selected
+        });
     }
 }

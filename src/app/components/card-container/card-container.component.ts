@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, Input, ElementRef } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 
@@ -21,6 +22,7 @@ export class CardContainerComponent {
     @Input('items') itemsList: any;
     @Input() selectedItem: string;
     @Input('owner-menu') ownerMenu: Array<Object>;
+    @Input() editTopic: Observable<string>;
 
     private headerHeight: number = 120;
     private filterOptions: Array<Object>;

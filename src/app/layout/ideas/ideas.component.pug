@@ -8,6 +8,7 @@ vertical-list(
     +comploader
 card-container(
     entity="ideas",
+    [editTopic]="editSubject.asObservable()",
     [type]="type",
     [items]="items",
     [selectedItem]="selectedItem",

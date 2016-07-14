@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PublishService {
-    private publishSubject = new Subject<Object>();
+    private publishSubject = new Subject<any>();
 
-    publish$ = this.publishSubject.asObservable();
+    publish$: Observable<any> = this.publishSubject.asObservable();
 
-    publish(data: Object) {
+    publish(data: any) {
         this.publishSubject.next(data);
     }
 }

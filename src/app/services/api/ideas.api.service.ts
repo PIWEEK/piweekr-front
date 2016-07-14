@@ -29,6 +29,14 @@ export class IdeaApiService extends ApiCommons {
             json => new Idea(json)
         );
     }
+
+    promote(ideaId: string): Observable<any> {
+        return this.post("ideaPromotion", [ideaId]);
+    }
+
+    update(ideaId: string, values: {title: string, description: string}): Observable<Idea> {
+        return this.patch("ideaDetail", [ideaId], values);
+    }
 }
 
 

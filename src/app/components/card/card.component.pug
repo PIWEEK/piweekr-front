@@ -9,17 +9,29 @@ header
             [avatar]="card.owner.avatar",
             background="black"
         )
-    .title {{ card.title }}
+    .title(*ngIf="!editing") {{ card.title }}
+    .title.is-editing(*ngIf="editing")
+      input([(ngModel)]="card.title", title="description")
+
+    button.save.is-editing(*ngIf="editing", type="submit", (click)="saveEdition()") 
+      +icon('icon-check')
+
+    button.cancel.is-editing(*ngIf="editing", type="submit", (click)="cancelEdition()") 
+      +icon('icon-close')
+
     owner(
         #owner,
-        *ngIf="session.currentUser && session.currentUser.username === card.owner.username",
+        *ngIf="session.currentUser && session.currentUser.username === card.owner.username && !editing",
         [owner]="card.owner",
         [owner-options]="ownerMenu",
         [card-id]="card.uuid",
         (mouseleave)="owner.closeMenu()"
     )
 
-.desc {{ card.description }}
+.desc(*ngIf="!editing") {{ card.description }}
+.desc.is-editing(*ngIf="editing") 
+  textarea([(ngModel)]="card.description", name="description")
+
 invited([inviteds]="card.inviteds")
 
 comments-container(

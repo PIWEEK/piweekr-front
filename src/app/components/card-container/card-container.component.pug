@@ -19,6 +19,7 @@ section.card-container
     )
     card(
         *ngFor="let item of itemsList",
+        [editTopic]="editTopic",
         [entity]="entity",
         [attr.data-card-id]="item.uuid",
         [card]="item",
