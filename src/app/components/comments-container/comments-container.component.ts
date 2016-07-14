@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-
-import { CommentComponent } from '../comment/comment.component';
-
+import { CommentListComponent } from '../comment-list/comment-list.component';
+import { CommentInputComponent } from '../comment-input/comment-input.component';
 import { KeysFilter } from '../../pipes';
+import { UserSessionService } from "../../services/user-session.service";
 
 const BASE_DIR = './app/components/comments-container';
 
@@ -11,10 +11,20 @@ const BASE_DIR = './app/components/comments-container';
     templateUrl: `${BASE_DIR}/comments-container.component.html`,
     styleUrls: [`${BASE_DIR}/comments-container.component.css`],
     pipes: [KeysFilter],
-    directives: [CommentComponent]
+    directives: [CommentListComponent, CommentInputComponent]
 })
 
 export class CommentsContainerComponent {
+    @Input() uuid: string;
+    @Input() entity: string;
     @Input() comments: number;
     @Input() reactions: Object = {};
+
+    showComments: boolean = false;
+
+    constructor(private session: UserSessionService) {}
+
+    handleToggleComments() {
+        this.showComments = !this.showComments;
+    }
 }

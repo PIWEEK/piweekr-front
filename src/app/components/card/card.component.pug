@@ -20,10 +20,14 @@ header
 
 .desc {{ card.description }}
 invited([inviteds]="card.inviteds")
+
 comments-container(
+    [entity]="entity",
+    [uuid]="card.uuid",
     [comments]="card.commentsCount",
     [reactions]="card.reactionsCounts"
 )
+
 .actions
     watch([card-id]="card.uuid")
     fork([card-id]="card.uuid")

@@ -1,0 +1,25 @@
+@import '../../../globals.css';
+
+:host {
+    display: flex;
+    padding: 1em 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+input {
+    height: 52px;
+    flex-grow: 1;
+}
+button {
+    @apply --button;
+    @apply --button-primary;
+    max-width: 8rem;
+}
+
+
+

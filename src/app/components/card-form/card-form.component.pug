@@ -10,26 +10,73 @@ header
         +icon('icon-close')
 form(
     method="post",
-    (ngSubmit)="onSubmit()"
+    (ngSubmit)="onCreateNewItem()",
+    *ngIf="type === 'Ideas'"
 )
     fieldset
         input(
             type="text",
             placeholder="{{'Add ' + type + ' title'}}",
-            autofocus="true"
+            autofocus="true",
+            [(ngModel)]="idea.title",
+            name="title",
+            required
         )
     fieldset
-        textarea(placeholder="Add a description")
-    fieldset
-        input(
-            type="text",
-            placeholder="Invite users"
+        textarea(
+            placeholder="Add a description",
+            [(ngModel)]="idea.description",
+            name="description",
+            required
         )
     fieldset.item-visibility
+        span Is this Idea visible?
         input(
             type="checkbox",
-            id="item-visibility"
+            id="item-visibility",
+            name="visibility",
+            [(ngModel)]="idea.visibility",
             checked
         )
         label(for="item-visibility")
-        span Is this {{type}} visible?
+    fieldset.user-invite
+
+        input(
+            type="text",
+            placeholder="Invite users",
+            name="invite-user",
+            (keyup)="doStuff()",
+            [(ngModel)]="inviteUser"
+        )
+
+        .display-users(*ngIf="filteredUsers && filteredUsers.length && displayUserInviteList")
+            .single-user(
+                *ngFor="let user of filteredUsers",
+                (click)="onInviteUser(user)"
+            )
+                avatar-editor(
+                    editable="false",
+                    avatar-type="small-head",
+                    [avatar]="user.avatar"
+                )
+                span.single-user-name {{ user.fullName }}
+
+        .invited-users-wrapper(*ngIf="invitedUsers")
+            .invited-users-single(
+                *ngFor="let invitedUser of invitedUsers",
+            )
+                avatar-editor(
+                    editable="false",
+                    avatar-type="small-head",
+                    [avatar]="invitedUser.avatar"
+                )
+                span.single-invited-name {{ invitedUser.fullName }}
+                a.remove-invite(
+                    href="javascript:void(0)",
+                    (click)="onRemoveUser(invitedUser)"
+                )
+                    +icon('icon-close')
+
+    button(
+        type="submit"
+    ) Create

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {User} from "./user";
+import { User } from "./user";
 
 export class Comment {
     uuid: string;
@@ -7,13 +7,13 @@ export class Comment {
     createdAt: moment.Moment;
     content: string;
 
-    constructor(data: {uuid: string,
+    constructor(data: {uuid?: string,
                        owner: any,
-                       createdAt: string,
+                       createdAt?: string,
                        content: string}) {
         this.uuid = data.uuid;
         this.owner = new User(data.owner);
-        this.createdAt = moment(data.createdAt);
+        this.createdAt = data.createdAt ? moment(data.createdAt) : moment();
         this.content = data.content;
     }
 }

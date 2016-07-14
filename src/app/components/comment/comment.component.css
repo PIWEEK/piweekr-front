@@ -1,0 +1,54 @@
+:host {
+    display: flex;
+    padding: 0em 2em;
+}
+
+avatar-editor {
+    margin-top: 2em;
+}
+
+.header {
+    display: flex;
+    margin-bottom: 0.2em;
+}
+
+.content {
+    padding: 0em 1em;
+    width: 100%;
+}
+
+.author {
+    display: block;
+    font-size: 0.9rem;
+    color: #761cec;
+}
+
+.date {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #ffa000;
+    margin-left: auto;
+}
+.text {
+    position: relative;
+    padding: 15px;
+    color: #333;
+    background: rgb(250, 235, 210);
+    border-radius: 15px;
+    margin: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        display: block;
+        width: 0;
+        top: 15px;
+        bottom: auto;
+        left: -15px;
+        border-width: 5px 15px 5px 0;
+        border-color: transparent rgb(250, 235, 210);
+    }
+   
+}
+

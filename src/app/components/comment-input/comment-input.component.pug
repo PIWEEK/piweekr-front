@@ -1,0 +1,11 @@
+avatar-editor(
+    editable="false", 
+    avatar-type="medium-head", 
+    [avatar]="session.currentUser.avatar")
+  
+form(
+  method="post",
+  (ngSubmit)="onSubmit()"
+)
+  input(type="text", placeholder="Introduce un comentario")
+  button(type="submit") Enviar

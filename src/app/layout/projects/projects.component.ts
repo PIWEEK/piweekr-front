@@ -40,7 +40,9 @@ export class ProjectsComponent {
 
     ngOnInit() {
         this._api.projects.list().subscribe(
-            projects => this.items = projects,
+            projects => {
+                this.items = projects;
+            },
             err => console.log(err)
         );
     }

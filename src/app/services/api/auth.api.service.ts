@@ -9,7 +9,7 @@ import { LoginAuth } from '../../model/auth';
 import { UserSessionService } from '../user-session.service';
 
 const HARDCODED_USER = {
-    userName: "alotor",
+    username: "alotor",
     email: "fake@gmail.com",
     fullName: "Fake User",
     avatar: {

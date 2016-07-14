@@ -18,7 +18,7 @@ export class LoginFormComponent {
     errorMessage: string;
 
     constructor(private api: ApiService, private router: Router) {
-        this.model.userName = "user-1";
+        this.model.username = "user-1";
         this.model.password = "123123";
     }
 
