@@ -2,7 +2,8 @@ import '../../rxjs-operators';
 
 import { Http, Headers, RequestMethod, Request, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { URL_BASE, API_ROUTES } from '../api.routes';
+import { URL_BASE } from '../../constants';
+import { API_ROUTES } from '../api.routes';
 import { UserSessionService } from "../user-session.service";
 
 export class ApiCommons {
