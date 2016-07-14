@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { AvatarEditorComponent } from "../avatar-editor/avatar-editor.component";
 import { User } from "../../model/user";
 
-
 const BASE_DIR = './app/components/card-form';
 
 @Component({

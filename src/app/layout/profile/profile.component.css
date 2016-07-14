@@ -21,6 +21,10 @@ header {
     display: flex;
 }
 
+header avatar-editor {
+    margin-right: 1rem;
+}
+
 .title {
     flex-grow: 1;
     font-size: var(--font-large);
@@ -54,4 +58,10 @@ button {
     @apply --button;
     @apply --button-action;
     margin-top: 2em;
+}
+
+.label {
+    font-size: var(--font-xsmall);
+    font-weight: var(--bold);
+    margin: 1rem 0;
 }

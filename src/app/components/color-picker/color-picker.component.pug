@@ -1,0 +1,6 @@
+ul.colours
+    li(
+        *ngFor="let item of colors",
+        [ngStyle]="{'background-color': item}"
+    )
+        a.color-link(href='javascript:void(0)', (click)='changeColour(item)')

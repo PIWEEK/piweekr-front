@@ -1,0 +1,14 @@
+.colours {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.color-link {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+}

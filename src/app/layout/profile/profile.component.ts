@@ -1,14 +1,15 @@
 import {Component} from "@angular/core";
 
 import { ApiService } from "../../services/api.service";
-import {AvatarEditorComponent} from "../../components/avatar-editor/avatar-editor.component";
+import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
+import { ColorPickerComponent } from "../../components/color-picker/color-picker.component";
 import { UserSessionService } from "../../services/user-session.service";
 
 @Component({
     selector: "profile-layout",
     templateUrl: "./app/layout/profile/profile.component.html",
     styleUrls: ["./app/layout/profile/profile.component.css"],
-    directives: [AvatarEditorComponent]
+    directives: [AvatarEditorComponent, ColorPickerComponent]
 })
 
 export class ProfileComponent {
@@ -30,9 +31,8 @@ export class ProfileComponent {
     }
 
     onUpdateUser() {
-        console.log('onUpdateUser');
         this.api.users.update(this.userId, this.user).subscribe(
-            user => session.store(user),
+            user => this.session.store(user),
             err => console.log('err', err)
         );
     }

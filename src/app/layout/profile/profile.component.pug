@@ -6,14 +6,16 @@ section(*ngIf="session.currentUser")
             avatar-type="small-head",
             [head]="session.currentUser.avatar.head",
             [body]="session.currentUser.avatar.body",
-            [legs]="session.currentUser.avatar.legs"
+            [legs]="session.currentUser.avatar.legs",
+            [background]="session.currentUser.avatar.background"
         )
     .content
         avatar-editor(
             [editable]="true",
             [(head)]="session.currentUser.avatar.head",
             [(body)]="session.currentUser.avatar.body",
-            [(legs)]="session.currentUser.avatar.legs"
+            [(legs)]="session.currentUser.avatar.legs",
+            [background]="session.currentUser.avatar.background"
         )
         .form
             form(
@@ -39,6 +41,9 @@ section(*ngIf="session.currentUser")
                         required
                     )
 
+                fieldset
+                    .label Color de fondo
+                    color-picker([(color)]="session.currentUser.avatar.background")
                 button(
                     type="submit"
                 ) Actualizar

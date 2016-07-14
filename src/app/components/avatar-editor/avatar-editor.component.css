@@ -46,8 +46,9 @@
 
 
 .avatar-editor {
-    vertical-align: center;
+    border-radius: 20px;
     overflow: hidden;
+    vertical-align: center;
 }
 
 .avatar {
