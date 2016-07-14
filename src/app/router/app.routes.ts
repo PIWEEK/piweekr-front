@@ -4,6 +4,7 @@ import { IdeasComponent } from "../layout/ideas/ideas.component";
 import { MarketplaceComponent } from "../layout/marketplace/marketplace.component";
 import { ProfileComponent } from "../layout/profile/profile.component";
 import { ProjectsComponent } from "../layout/projects/projects.component";
+import { WinnersComponent } from "../layout/winners/winners.component";
 
 export const routes: RouterConfig = [
     {path: '',            component: HomeComponent},
@@ -11,6 +12,7 @@ export const routes: RouterConfig = [
     {path: 'marketplace', component: MarketplaceComponent},
     {path: 'profile',     component: ProfileComponent},
     {path: 'projects',    component: ProjectsComponent},
+    {path: 'winners',     component: WinnersComponent},
 ];
 
 export const PRECOMPILE_ARRAY = routes.map(v => v.component);

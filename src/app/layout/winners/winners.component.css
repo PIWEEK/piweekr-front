@@ -1,0 +1,7 @@
+@import '../../../globals.css';
+
+:host {
+    min-height: calc(100vh - 50px);
+    display: flex;
+    padding-top: 50px;
+}
