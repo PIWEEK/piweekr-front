@@ -19,22 +19,31 @@ export class FiltersComponent {
 
     constructor(public publishService: PublishService) {
         this.selected = {
-            isForked: undefined,
-            isPublic: false
+            title: '',
+            isForked: null,
+            isPublic: null
         };
 
         this.isForked = [
+            {
+                key: null,
+                value: 'All'
+            },
             {
                 key: true,
                 value: 'Sí'
             },
             {
-                key: undefined,
+                key: false,
                 value: 'No'
             }
         ];
 
         this.isPublic = [
+            {
+                key: null,
+                value: 'All'
+            },
             {
                 key: true,
                 value: 'Sí'
