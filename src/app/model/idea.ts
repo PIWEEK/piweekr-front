@@ -11,6 +11,7 @@ export class Idea {
     createdAt: moment.Moment;
     isPublic: boolean;
     forkedFrom: string;
+    users: User[];
 
     constructor(data: {uuid: string,
                        title: string
@@ -20,7 +21,8 @@ export class Idea {
                        commentsCount? : number,
                        createdAt: string,
                        isPublic: boolean,
-                       forkedFrom? : string}) {
+                       forkedFrom? : string,
+                       users?: any}) {
 
         this.uuid = data.uuid;
         this.title = data.title;
@@ -31,6 +33,7 @@ export class Idea {
         this.createdAt = moment(data.createdAt);
         this.isPublic = data.isPublic;
         this.forkedFrom = data.forkedFrom;
+        this.users = data.users ? data.users.map(u => new User(u)) : [];
     }
 }
 

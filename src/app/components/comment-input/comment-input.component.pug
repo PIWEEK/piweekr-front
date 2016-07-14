@@ -7,5 +7,5 @@ form(
   method="post",
   (ngSubmit)="onSubmit()"
 )
-  input(type="text", placeholder="Introduce un comentario")
+  input(type="text", placeholder="Introduce un comentario", [(ngModel)]="comment", name="comment")
   button(type="submit") Enviar

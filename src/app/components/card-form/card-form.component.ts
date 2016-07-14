@@ -23,17 +23,19 @@ export class CardFormComponent {
     displayUserInviteList: boolean = false;
     userList: Observable<User[]>;
     idea: any = {};
+
     ngOnInit() {
         this.userList = this.api.users.list();
         console.log(this.userList);
     }
+
     doStuff() {
-        this.displayUserInviteList = true;
         if (this.inviteUser.length > 3) {
+            this.displayUserInviteList = true;
             this.userList
                 .flatMap(users => Observable.of(...users))
-                // .filter( user => user.fullName.toLowerCase().includes(this.invitedUsers.fullName.toLowerCase()))
                 .filter( user => user.fullName.toLowerCase().includes(this.inviteUser.toLowerCase()))
+                .filter( user => !this.isInvited(user))
                 .take(5)
                 .toArray()
                 .subscribe(
@@ -42,17 +44,30 @@ export class CardFormComponent {
                 );
         }
     }
+
     onInviteUser(user) {
         this.displayUserInviteList = false;
         this.invitedUsers.push(user);
         this.inviteUser = '';
     }
+
     onRemoveUser(user) {
         let index = this.invitedUsers.indexOf(user);
         this.invitedUsers.splice(index, 1);
     }
+
     onCreateNewItem() {
         this.idea.users = this.invitedUsers;
-        console.log(this.idea);
+        this.api.ideas.create(this.idea).subscribe(
+            idea => console.log(">> OK ", idea),
+            err => console.log(">> ERR ", err)
+        );
+    }
+
+    isInvited(user: User): boolean {
+        return this.invitedUsers.find(u => u.username === user.username) !== undefined
+    }
+
+    closeAddItemForm() {
     }
 }
