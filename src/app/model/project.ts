@@ -35,14 +35,12 @@ export class Project {
         this.description = data.description;
         this.technologies = data.technologies;
         this.commentsCount = data.commentsCount;
-        this.idea = new Idea(data.idea);
+        this.idea = new Idea(data.ideaFrom);
         this.reactionsCounts = data.reactionsCounts;
         this.needs = data.needs;
         this.logo = data.logo;
-        this.piweek = new Edition(data.piweek);
+        //this.piweek = new Edition(data.piweek);
         this.createdAt = moment(data.createdAt);
         this.owner = new User(data.owner);
     }
 }
-
-

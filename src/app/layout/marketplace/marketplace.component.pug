@@ -1,0 +1,35 @@
+section
+    h1 Se abre el MARKET PLACE!!!!
+    article.marketplace-project(
+        *ngFor="let item of items"
+    )
+        header
+            h1.title {{item.title}}
+        .marketplace-project-inner
+            .marketplace-project-owner
+                avatar-editor(
+                    editable="false",
+                    avatar-type="medium-body",
+                    [avatar]="item.owner.avatar"
+                )
+
+            .marketplace-project-description
+
+                p {{item.description}}
+
+            .marketplace-project-requirements
+                p(*ngIf="item.needs") {{item.needs}}
+                p(*ngIf="!item.needs") ¡No necesito nada!
+
+            .marketplace-project-technology
+                ul(*ngIf="item.technologies.length")
+                    li(*ngFor="let technology of item.technologies") {{technology}}
+                p(*ngIf="!item.technologies.length") Nada por aquí.
+
+            .marketplace-project-participants
+            - for (var x = 1; x < 8; x++)
+                avatar-editor(
+                    editable="false",
+                    avatar-type="small-head",
+                    [avatar]="item.owner.avatar"
+                )
