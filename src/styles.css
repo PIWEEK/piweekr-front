@@ -60,6 +60,7 @@ textarea {
     border-right: none;
     width: 100%;
     min-height: 8rem;
+    outline: none;
     padding: 1rem;
     resize: vertical;
     transition: all .2s;
