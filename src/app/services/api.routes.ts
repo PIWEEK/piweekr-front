@@ -1,4 +1,4 @@
-export const URL_BASE = "http://localhost:5000/api/v1";
+export const URL_BASE = "http://10.8.1.139:5000/api/v1";
 
 export const API_ROUTES = {
     login:      (base) => `${base}/login`,

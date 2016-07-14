@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgSelectOption } from '@angular/common';
+import { PublishService } from '../../services/publish.service';
 
 const BASE_DIR = './app/components/filters/';
 
@@ -14,11 +15,9 @@ export class FiltersComponent {
     private isForked: Array<Object>;
     private isPublic: Array<Object>;
 
-    @Output() filtersChange = new EventEmitter<Object>();
-
     public selected: Object;
 
-    constructor() {
+    constructor(public publishService: PublishService) {
         this.selected = {
             isForked: undefined,
             isPublic: false
@@ -48,6 +47,6 @@ export class FiltersComponent {
     }
 
     modelChange() {
-        this.filtersChange.emit(this.selected);
+        this.publishService.publish(this.selected);
     }
 }
