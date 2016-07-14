@@ -12,35 +12,6 @@ section {
     width: 90vw;
 }
 
-.marketplace-project {
-    background: var(--white);
-    border-radius: 4px;
-    box-shadow: 3px 3px 2px var(--gray300);
-    margin-bottom: 3rem;
-    overflow: hidden;
-}
-
-header {
-    align-items: center;
-    background: var(--primary);
-    color: var(--white);
-    display: flex;
-}
-
-.title {
-    font-size: var(--font-large);
-    font-weight: var(--bold);
-    margin: 0;
-    padding: 1rem;
-}
-
-.marketplace-project-inner {
-    display: flex;
-}
-
-.marketplace-project-owner {
-    flex-basis: 85px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: 1rem;
+h1 {
+    margin-bottom: 2rem;
 }

@@ -1,0 +1,36 @@
+doctype html
+include ../../../mixins
+
+header
+    h1.title {{card.title}}
+    button.join-project(type="submit") Confirmo!
+.marketplace-project-inner
+    .marketplace-project-owner(
+        [ngStyle]="{'background': card.owner.avatar.background}"
+    )
+        avatar-editor(
+            editable="false",
+            avatar-type="medium-body",
+            [avatar]="card.owner.avatar"
+        )
+
+    .marketplace-project-description
+        h2.intitle Descripción del proyecto
+        p {{card.description}}
+
+    .marketplace-project-requirements
+        h2.intitle ¿Qué necesito?
+        p(*ngIf="card.needs") {{card.needs}}
+        p(*ngIf="!card.needs") ¡No necesito nada!
+
+    .marketplace-project-technology
+        h2.intitle Tecnologías
+        ul(*ngIf="card.technologies.length")
+            li(*ngFor="let technology of card.technologies")
+                +icon("icon-widgets")
+                span {{technology}}
+        p.inactive(*ngIf="!card.technologies.length") Nada por aquí.
+
+    user-list(
+        [user]="card.participants"
+    )

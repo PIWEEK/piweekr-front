@@ -1,12 +1,12 @@
 import {Component} from "@angular/core";
 import { ApiService } from "../../services/api.service";
-import { AvatarEditorComponent } from "../../components/avatar-editor/avatar-editor.component";
+import { MarketplaceCardComponent } from "../../components/marketplace-card/marketplace-card.component";
 
 @Component({
     selector: "marketplace-layout",
     templateUrl: "./app/layout/marketplace/marketplace.component.html",
     styleUrls: ["./app/layout/marketplace/marketplace.component.css"],
-    directives: [AvatarEditorComponent]
+    directives: [MarketplaceCardComponent]
 })
 
 export class MarketplaceComponent {
