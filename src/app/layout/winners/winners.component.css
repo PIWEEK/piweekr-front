@@ -1,7 +1,69 @@
 @import '../../../globals.css';
 
 :host {
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh);
     display: flex;
     padding-top: 50px;
+    animation: blink .3s infinite;
+}
+
+section {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 10rem;
+    text-align: center;
+    color: var(--white);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 6rem;
+    text-align: center;
+    color: var(--white);
+    margin: 0;
+    animation: reblink .4s infinite;
+}
+
+img {
+    margin: 0 auto;
+}
+
+@keyframes blink {
+    0% {
+        background: yellow;
+        transition: background;
+    }
+    25% {
+        background: red;
+        transition: background;
+    }
+    50% {
+        background: orange;
+        transition: background;
+    }
+    75% {
+        background: blue;
+        transition: background;
+    }
+    100% {
+        transition: background;
+        background: yellow;
+    }
+}
+
+@keyframes reblink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
