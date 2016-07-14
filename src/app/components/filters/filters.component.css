@@ -1,0 +1,26 @@
+@import '../../../globals.css';
+
+:host {
+    background: var(--white);
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.fielset {
+    margin: 1rem;
+}
+
+label {
+    font-size: var(--font-xxsmall);
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+label, input, select {
+    display: block;
+}
+
+input, select {
+    margin-top: 0;
+}

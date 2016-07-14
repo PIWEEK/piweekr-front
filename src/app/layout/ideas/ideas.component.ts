@@ -18,7 +18,6 @@ export class IdeasComponent {
     ownerMenu: Array<Object>;
 
     constructor(private _api: ApiService) {
-
         this.ownerMenu = [
             {
                 name: 'Borrar',

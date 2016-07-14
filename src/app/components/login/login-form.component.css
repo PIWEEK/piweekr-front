@@ -1,7 +1,7 @@
 @import '../../../globals.css';
 
 :host {
-    background: white;
+    background: var(--white);
     display: block;
     margin: auto;
     padding: 2em 5em;

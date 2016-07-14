@@ -1,0 +1,34 @@
+.fielset
+    label(for='title') Título
+    input#title(
+        type='text',
+        name='title',
+        placeholder='Título',
+        [(ngModel)]='selected.title',
+        (ngModelChange)='modelChange()',
+        value=''
+    )
+
+.fielset
+    label(for='forked') Forked
+    select#forked(
+        name='forked',
+        [(ngModel)]='selected.isForked',
+        (ngModelChange)='modelChange()'
+    )
+        option(
+            *ngFor='let o of isForked',
+            [value]='o.key'
+        ) {{ o.value }}
+
+.fielset
+    label(for='public') Public
+    select#public(
+        name='public',
+        [(ngModel)]='selected.isPublic',
+        (ngModelChange)='modelChange()'
+    )
+        option(
+            *ngFor='let o of isPublic',
+            [value]='o.key'
+        ) {{ o.value }}
