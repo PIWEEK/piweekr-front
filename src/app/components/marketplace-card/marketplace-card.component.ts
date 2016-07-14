@@ -15,32 +15,25 @@ const BASE_DIR = './app/components/marketplace-card/';
 
 export class MarketplaceCardComponent {
     @Input() card: any;
+    isInterested: boolean;
+    isParticipant: boolean;
+    isOwner: boolean;
+    isUserLoggedIn: boolean;
     constructor(
         private session: UserSessionService,
         private api: ApiService
-    ) {}
-    isCurrentUserInProject() {
-        if (this.session.currentUser) {
-            let isOwner = this.card.owner.username === this.session.currentUser.username;
-            let isInProject = this.card.usersInterested.some(it => this.session.currentUser.username === it.username);
-            if (isInProject && !isOwner) {
-                return true;
-            }
-            return false;
-        }
-        return false;
+    ) {
     }
-    isCurrentUserNotInProject() {
+
+    ngOnInit() {
         if (this.session.currentUser) {
-            let isOwner = this.card.owner.username === this.session.currentUser.username;
-            let isInProject = this.card.usersInterested.some(it => this.session.currentUser.username === it.username);
-            if (!isInProject && !isOwner) {
-                return true;
-            }
-            return false;
+            this.isUserLoggedIn = true;
+            this.isInterested = this.card.usersInterested.some(it => this.session.currentUser.username === it.username);
+            this.isParticipant = this.card.usersParticipant.some(it => this.session.currentUser.username === it.username);
+            this.isOwner = this.card.owner.username === this.session.currentUser.username;
         }
-        return false;
     }
+
     joinProject() {
         this.api.projects.join(this.card.uuid).subscribe(
             result => {
@@ -49,5 +42,4 @@ export class MarketplaceCardComponent {
             err => console.log(">> ERR ", err)
         );
     }
-
 }

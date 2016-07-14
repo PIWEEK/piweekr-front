@@ -2,14 +2,14 @@ doctype html
 include ../../../mixins
 
 header
-    h1.title {{card.title}}
+    h1.title {{card.title}} l:{{isUserLoggedIn}} i:{{isInterested}} p:{{isParticipant}} o:{{isOwner}}
     button.join-project(
-        *ngIf="isCurrentUserInProject()",
+        *ngIf="isUserLoggedIn && isInterested && !isParticipant && !isOwner",
         type="submit",
         (click)="joinProject()"
     ) ¡Confirmo!
     button.interest-project(
-        *ngIf="isCurrentUserNotInProject()",
+        *ngIf="isUserLoggedIn && !isInterested && !isParticipant && !isOwner",
         type="submit",
         (click)="joinProject()"
     ) ¡Interesante!

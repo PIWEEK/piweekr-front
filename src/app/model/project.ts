@@ -17,6 +17,7 @@ export class Project {
     createdAt: moment.Moment;
     owner: User;
     usersInterested: User[];
+    usersParticipant: User[];
 
     constructor(data: {uuid: string,
                        title: string,
@@ -31,6 +32,7 @@ export class Project {
                        createdAt: string,
                        owner: any,
                        usersInterested?: any[]
+                       usersParticipant?: any[]
                       }) {
         this.uuid = data.uuid;
         this.title = data.title;
@@ -46,6 +48,9 @@ export class Project {
         this.owner = new User(data.owner);
         if (data.usersInterested) {
             this.usersInterested = data.usersInterested.map(p => new User(p.user));
+        }
+        if (data.usersParticipant) {
+            this.usersParticipant = data.usersParticipant.map(p => new User(p.user));
         }
     }
 }
