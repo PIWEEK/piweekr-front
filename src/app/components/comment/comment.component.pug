@@ -10,5 +10,5 @@
 .content
   .header
     span.author(*ngIf="comment.owner") {{ comment.owner.fullName }}
-    p.date on {{ comment.createdAt }}
+    p.date {{ comment.createdAt | moment }}
   p.text {{ comment.content }}
