@@ -2,8 +2,8 @@ import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {NgStyle} from '@angular/common';
 import {Avatar} from '../../model/user';
 
-const TOTAL_NO_HEADS = 10;
-const TOTAL_NO_BODY = 11;
+const TOTAL_NO_HEADS = 23;
+const TOTAL_NO_BODY = 23;
 const TOTAL_NO_LEGS = 11;
 
 @Component({
@@ -49,7 +49,7 @@ export class AvatarEditorComponent {
     private incrementPart(part:number, increment:number, max:number) {
         const result: number = part + increment;
 
-        if (result >= max) {
+        if (result > max) {
             return 1;
         }
         if (result < 1) {

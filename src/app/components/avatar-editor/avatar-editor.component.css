@@ -64,8 +64,9 @@
     margin-top: -30px;
 }
 
-.avatar__body img {
+.avatar__body {
     z-index: 1;
+    position: relative;
 }
 
 .image {
@@ -79,6 +80,7 @@
 
 .avatar-editor__part {
     display: flex;
+    align-items: center;
 }
 
 
