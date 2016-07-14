@@ -8,16 +8,6 @@ import { User } from '../../model/user';
 import { LoginAuth } from '../../model/auth';
 import { UserSessionService } from '../user-session.service';
 
-const HARDCODED_USER = {
-    username: "alotor",
-    email: "fake@gmail.com",
-    fullName: "Fake User",
-    avatar: {
-        head: 1, body: 2, legs: 3, background: "#FF0000"
-    },
-    token: "XXXX"
-};
-
 @Injectable()
 export class AuthApiService extends ApiCommons {
     constructor(http: Http, session: UserSessionService) {

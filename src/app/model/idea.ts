@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {User} from "./user";
+import {User, FAKE_USER} from "./user";
 
 export class Idea {
     uuid: string;
@@ -27,7 +27,7 @@ export class Idea {
         this.uuid = data.uuid;
         this.title = data.title;
         this.description = data.description;
-        this.owner = (data.owner) ? new User(data.owner) : null;
+        this.owner = (data.owner) ? new User(data.owner) : FAKE_USER;
         this.reactionsCounts = data.reactionsCounts;
         this.commentsCount = data.commentsCount;
         this.createdAt = moment(data.createdAt);

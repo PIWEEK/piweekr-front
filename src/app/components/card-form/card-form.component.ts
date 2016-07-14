@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from "../../services/api.service";
 import { Observable } from 'rxjs/Observable';
 import { AvatarEditorComponent } from "../avatar-editor/avatar-editor.component";
@@ -16,6 +16,9 @@ const BASE_DIR = './app/components/card-form';
 
 export class CardFormComponent {
     @Input() type: string;
+    @Output() onCardClosed: EventEmitter<any> = new EventEmitter();
+    @Output() onCardCreated: EventEmitter<any> = new EventEmitter();
+
     constructor(private api: ApiService) {}
     inviteUser: any;
     filteredUsers: any;
@@ -59,7 +62,9 @@ export class CardFormComponent {
     onCreateNewItem() {
         this.idea.users = this.invitedUsers;
         this.api.ideas.create(this.idea).subscribe(
-            idea => console.log(">> OK ", idea),
+            idea => {
+                this.onCardCreated.emit(idea);
+            },
             err => console.log(">> ERR ", err)
         );
     }
@@ -69,5 +74,6 @@ export class CardFormComponent {
     }
 
     closeAddItemForm() {
+        this.onCardClosed.emit(null);
     }
 }

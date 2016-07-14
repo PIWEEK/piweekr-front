@@ -22,7 +22,7 @@ export class Project {
                        description: string,
                        technologies: string[],
                        commentsCount: number,
-                       idea: any,
+                       ideaFrom?: any,
                        reactionsCounts: Map<string, number>,
                        needs: string,
                        logo: string,

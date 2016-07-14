@@ -25,7 +25,9 @@ export class IdeaApiService extends ApiCommons {
             isPublic: idea.isPublic || false,
             invitedUsernames: idea.users.map( u => u.username )
         };
-        return this.post("ideas", [], payload);
+        return this.post("ideas", [], payload).map(
+            json => new Idea(json)
+        );
     }
 }
 

@@ -48,6 +48,10 @@ export class CardContainerComponent {
         this.isItemFormVisible = true;
     }
 
+    handleCardClosed() {
+        this.isItemFormVisible = false;
+    }
+
     handleCardCreated(card) {
         this.isItemFormVisible = false;
         this.itemsList.unshift(card);
