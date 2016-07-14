@@ -11,5 +11,5 @@ const BASE_DIR = './app/components/user-list/';
 })
 
 export class UserListComponent {
-    @Input() user: Object;
+    @Input() users: Object;
 }

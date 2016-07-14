@@ -88,7 +88,8 @@ p {
     }
 }
 
-.marketplace-project-participants {
+.marketplace-project-participants,
+.user-list {
     align-content: flex-start;
     display: flex;
     flex-basis: 3vh;
@@ -96,4 +97,8 @@ p {
     flex-shrink: 1;
     flex-wrap: wrap;
     padding: 1rem;
+}
+
+.user-list {
+    color: var(--gray600);
 }

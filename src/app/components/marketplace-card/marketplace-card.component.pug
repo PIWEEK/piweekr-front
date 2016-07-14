@@ -32,5 +32,9 @@ header
         p.inactive(*ngIf="!card.technologies.length") Nada por aquí.
 
     user-list(
-        [user]="card.participants"
+        *ngIf="card.usersInterested.length",
+        [users]="card.usersInterested"
     )
+    p.user-list(
+        *ngIf="!card.usersInterested.length"
+    ) Ey, parece que este proyecto se va a hacer un Iván!

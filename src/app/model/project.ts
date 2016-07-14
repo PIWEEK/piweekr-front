@@ -16,6 +16,7 @@ export class Project {
     piweek: Edition;
     createdAt: moment.Moment;
     owner: User;
+    usersInterested: User[];
 
     constructor(data: {uuid: string,
                        title: string,
@@ -28,7 +29,8 @@ export class Project {
                        logo: string,
                        piweek: any,
                        createdAt: string,
-                       owner: any
+                       owner: any,
+                       usersInterested?: any[]
                       }) {
         this.uuid = data.uuid;
         this.title = data.title;
@@ -42,5 +44,8 @@ export class Project {
         //this.piweek = new Edition(data.piweek);
         this.createdAt = moment(data.createdAt);
         this.owner = new User(data.owner);
+        if (data.usersInterested) {
+            this.usersInterested = data.usersInterested.map(p => new User(p.user));
+        }
     }
 }
