@@ -47,4 +47,9 @@ export class CardContainerComponent {
     addNewItem() {
         this.isItemFormVisible = true;
     }
+
+    handleCardCreated(card) {
+        this.isItemFormVisible = false;
+        this.itemsList.unshift(card);
+    }
 }

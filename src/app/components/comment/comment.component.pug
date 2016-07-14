@@ -1,5 +1,6 @@
 .author 
   avatar-editor(
+    *ngIf="comment.owner",
     editable="false",
     avatar-type="small-body", 
     [head]="comment.owner.avatar.head",
@@ -8,6 +9,6 @@
 
 .content
   .header
-    span.author {{ comment.owner.fullName }}
+    span.author(*ngIf="comment.owner") {{ comment.owner.fullName }}
     p.date on {{ comment.createdAt }}
   p.text {{ comment.content }}

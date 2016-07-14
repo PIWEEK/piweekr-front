@@ -32,4 +32,8 @@ export class CommentListComponent {
                 err => console.log(">>> ERROR", err)
             );
     }
+
+    addComment(comment) {
+        this.comments.push(comment);
+    }
 }

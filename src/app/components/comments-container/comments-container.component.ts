@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CommentListComponent } from '../comment-list/comment-list.component';
 import { CommentInputComponent } from '../comment-input/comment-input.component';
 import { KeysFilter } from '../../pipes';
@@ -20,11 +20,18 @@ export class CommentsContainerComponent {
     @Input() comments: number;
     @Input() reactions: Object = {};
 
+    @ViewChild(CommentListComponent)
+    private commentList: CommentListComponent;
+
     showComments: boolean = false;
 
     constructor(private session: UserSessionService) {}
 
     handleToggleComments() {
         this.showComments = !this.showComments;
+    }
+
+    handleCommentCreated(comment) {
+        this.commentList.addComment(comment);
     }
 }
