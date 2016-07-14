@@ -23,6 +23,12 @@ header {
     padding: 1.2rem;
 }
 
+.interest-project {
+    @apply --button;
+    @apply --button-dark;
+    padding: 1.2rem;
+}
+
 .title {
     font-size: var(--font-large);
     font-weight: var(--bold);
