@@ -4,6 +4,7 @@ include ../../../mixins
 .filters
     filters
     button(
+        *ngIf="session.currentUser",
         type="button",
         (click)="addNewItem()"
     )

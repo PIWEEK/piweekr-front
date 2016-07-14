@@ -4,6 +4,7 @@ import { Subscription }   from 'rxjs/Subscription';
 import { CardComponent } from '../../components/card/card.component';
 import { CardFormComponent } from '../../components/card-form/card-form.component';
 import { FiltersComponent } from '../../components/filters/filters.component';
+import { UserSessionService } from "../../services/user-session.service";
 
 const BASE_DIR = './app/components/card-container/';
 
@@ -26,7 +27,10 @@ export class CardContainerComponent {
     isItemFormVisible = false;
     subscription: Subscription;
 
-    constructor(private window: Window, private elementRef: ElementRef) {}
+    constructor(public session: UserSessionService,
+                private window: Window,
+                private elementRef: ElementRef) {
+    }
 
     ngOnChanges() {
         if (this.selectedItem) {

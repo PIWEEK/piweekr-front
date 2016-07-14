@@ -70,7 +70,7 @@ export class CardFormComponent {
     }
 
     isInvited(user: User): boolean {
-        return this.invitedUsers.find(u => u.username === user.username) !== undefined
+        return this.invitedUsers.find(u => u.username === user.username) !== undefined;
     }
 
     closeAddItemForm() {

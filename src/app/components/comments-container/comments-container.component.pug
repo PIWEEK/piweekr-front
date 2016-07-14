@@ -14,7 +14,7 @@ include ../../../mixins
       span.content comentarios
 
 comment-list(
-  *ngIf="showComments",
+  *ngIf="showComments && (session.currentUser || comments > 0)",
   [entity]="entity",
   [uuid]="uuid")
 

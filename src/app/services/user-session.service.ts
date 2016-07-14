@@ -1,8 +1,8 @@
 import { User } from "../model/user";
 
 export class UserSessionService {
-    token: String;
-    currentUser: User;
+    public token: String;
+    public currentUser: User;
 
     constructor() {
     }
