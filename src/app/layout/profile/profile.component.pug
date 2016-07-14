@@ -1,33 +1,49 @@
 section(*ngIf="session.currentUser")
-  avatar-editor(
-    [editable]="true", 
-    [(head)]="session.currentUser.avatar.head", 
-    [(body)]="session.currentUser.avatar.body", 
-    [(legs)]="session.currentUser.avatar.legs")
+    header
+        .title Avatar
+    .content
+        .configure
+            .subtitle Configura tu Personaje
+            avatar-editor(
+                [editable]="true",
+                [(head)]="session.currentUser.avatar.head",
+                [(body)]="session.currentUser.avatar.body",
+                [(legs)]="session.currentUser.avatar.legs"
+            )
+        .avatar
+            .subtitle Tu avatar
+            avatar-editor(
+                editable="false",
+                avatar-type="small-head",
+                [avatar]="session.currentUser.avatar"
+            )
 
-  avatar-editor(
-    editable="false", 
-    [avatar]="session.currentUser.avatar")
+    header
+        .title Tus datos
 
-  avatar-editor(
-    editable="false", 
-    avatar-type="medium-body", 
-    [avatar]="session.currentUser.avatar")
+    form(
+        method="post",
+        (ngSubmit)="onUpdateUser()"
+    )
+        fieldset
+            input(
+                type="text",
+                placeholder="Usuario",
+                autofocus="true",
+                [(ngModel)]="user.fullName",
+                name="fullname",
+                required
+            )
 
-  avatar-editor(
-    editable="false",
-    avatar-type="small-body", 
-    [avatar]="session.currentUser.avatar")
+        fieldset
+            input(
+                type="email",
+                placeholder="correo@electronico.com",
+                [(ngModel)]="user.email",
+                name="email",
+                required
+            )
 
-  avatar-editor(
-    editable="false", 
-    avatar-type="medium-head", 
-    [avatar]="session.currentUser.avatar")
-
-  avatar-editor(
-    editable="false", 
-    avatar-type="small-head", 
-    [avatar]="session.currentUser.avatar")
-
-
-  
+        button(
+            type="submit"
+        ) Actualizar

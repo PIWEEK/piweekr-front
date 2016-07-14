@@ -1,17 +1,65 @@
+@import '../../../globals.css';
+
 :host {
-    padding-top: 50px;
     display: block;
+    padding-top: 50px;
 }
 
 section {
     display: flex;
-    margin: auto;
-    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+header {
     align-items: center;
-    justify-content: space-around;
-    margin: 2em auto;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: var(--font-large);
+    font-weight: var(--bold);
+    padding: 1rem;
+}
+
+.subtitle {
+    font-size: var(--font-normal);
+    font-weight: var(--bold);
+    margin-top: 1rem;
 }
 
 avatar-editor {
     display: block;
+    width: 15rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 70%;
+}
+
+.configure, .avatar {
+    margin: 2rem auto;
+}
+
+form {
+    background: var(--white);
+    font-weight: var(--light);
+    padding: 2rem 2rem;
+}
+
+button {
+    @apply --button;
+    @apply --button-action;
+    margin-top: 2em;
 }

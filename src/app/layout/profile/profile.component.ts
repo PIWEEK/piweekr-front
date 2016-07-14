@@ -10,5 +10,21 @@ import { UserSessionService } from "../../services/user-session.service";
 })
 
 export class ProfileComponent {
-    constructor(public session: UserSessionService) {}
+    user: Object = {};
+
+    constructor(public session: UserSessionService) {
+        console.log('session', session);
+        if (!Object.keys(session).length) {
+            return;
+        }
+
+        this.user = {
+            email: session.currentUser.email,
+            fullName: session.currentUser.fullName
+        };
+    }
+
+    onUpdateUser() {
+        console.log('onUpdateUser');
+    }
 }
