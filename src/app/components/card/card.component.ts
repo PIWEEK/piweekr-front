@@ -6,6 +6,7 @@ import { InvitedComponent } from '../invited/invited.component';
 import { ForkComponent } from '../fork/fork.component';
 import { WatchComponent } from '../watch/watch.component';
 import { OwnerComponent } from '../owner/owner.component';
+import { UserSessionService } from '../../services/user-session.service';
 
 const BASE_DIR = './app/components/card';
 
@@ -27,4 +28,6 @@ export class CardComponent {
     @Input() entity: string;
     @Input() card: Object;
     @Input('owner-menu') ownerMenu: Array<Object>;
+
+    constructor(public session: UserSessionService) {}
 }

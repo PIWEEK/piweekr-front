@@ -30,12 +30,12 @@ form(
             required
         )
     fieldset.item-visibility
-        span Is this Idea visible?
+        span Is this Idea visible? {{idea.isPublic}}
         input(
             type="checkbox",
             id="item-visibility",
-            name="visibility",
-            [(ngModel)]="idea.visibility",
+            name="isPublic",
+            [(ngModel)]="idea.isPublic",
             checked
         )
         label(for="item-visibility")

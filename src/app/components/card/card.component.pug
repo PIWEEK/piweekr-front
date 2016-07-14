@@ -12,6 +12,7 @@ header
     .title {{ card.title }}
     owner(
         #owner,
+        *ngIf="session.currentUser && session.currentUser.username === card.owner.username",
         [owner]="card.owner",
         [owner-options]="ownerMenu",
         [card-id]="card.uuid",
@@ -28,6 +29,6 @@ comments-container(
     [reactions]="card.reactionsCounts"
 )
 
-.actions
+.actions(*ngIf="session.currentUser")
     watch([card-id]="card.uuid")
     fork([card-id]="card.uuid")

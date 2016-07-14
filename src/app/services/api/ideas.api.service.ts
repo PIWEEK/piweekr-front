@@ -17,6 +17,18 @@ export class IdeaApiService extends ApiCommons {
             json => json.map(v => new Idea(v))
         ) ;
     }
+
+    create(idea: Idea): Observable<Idea> {
+        const payload = {
+            title: idea.title,
+            description: idea.description,
+            isPublic: idea.isPublic || false,
+            invitedUsernames: idea.users.map( u => u.username )
+        };
+        return this.post("ideas", [], payload).map(
+            json => new Idea(json)
+        );
+    }
 }
 
 

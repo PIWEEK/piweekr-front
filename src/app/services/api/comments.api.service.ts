@@ -19,8 +19,18 @@ export class CommentsApiService extends ApiCommons {
     }
 
     create(entity: string, uuid: string, comment: Comment): Observable<Comment> {
-        return this.post("comments", [entity, uuid], comment).map(
+        const payload = {
+            content: comment.content
+        };
+        return this.post("comments", [entity, uuid], payload).map(
             json => new Comment(json)
         ) ;
+    }
+
+    addReaction(entity: string, uuid: string, reaction: string): Observable<any> {
+        const payload = {
+            code: reaction
+        };
+        return this.post("reactions", [entity, uuid], payload);
     }
 }

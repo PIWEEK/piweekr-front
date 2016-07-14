@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {ApiService} from "../../services/api.service";
 import {Comment} from "../../model/comment";
 import {AvatarEditorComponent} from "../../components/avatar-editor/avatar-editor.component";
@@ -15,6 +15,7 @@ const BASE_DIR = './app/components/comment-input';
 export class CommentInputComponent {
     @Input() entity: string;
     @Input() uuid: string;
+    @Output() onCreateComment: EventEmitter<Comment> = new EventEmitter<Comment>();
 
     comment: string = '';
 
@@ -30,8 +31,12 @@ export class CommentInputComponent {
         this.api.comments
             .create(this.entity, this.uuid, model)
             .subscribe(
-                comment => console.log("OK", comment),
+                comment => {
+                    this.comment = '';
+                    this.onCreateComment.emit(comment);
+                },
                 err => console.log("ERR", err)
             );
     }
+
 }

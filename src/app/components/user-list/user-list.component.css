@@ -1,0 +1,11 @@
+@import '../../../globals.css';
+
+:host {
+    align-content: flex-start;
+    display: flex;
+    flex-basis: 3vh;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    padding: 1rem;
+}

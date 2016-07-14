@@ -4,6 +4,7 @@ include ../../../mixins
 .filters
     filters
     button(
+        *ngIf="session.currentUser",
         type="button",
         (click)="addNewItem()"
     )
@@ -12,7 +13,9 @@ include ../../../mixins
 section.card-container
     card-form(
         [ngClass]="{'is-visible': isItemFormVisible}",
-        [type]="type"
+        [type]="type",
+        (onCardClosed)="handleCardClosed()",
+        (onCardCreated)="handleCardCreated($event)"
     )
     card(
         *ngFor="let item of itemsList",

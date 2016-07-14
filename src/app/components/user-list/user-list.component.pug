@@ -1,0 +1,6 @@
+avatar-editor(
+    *ngFor="let user of users",
+    editable="false",
+    avatar-type="small-head",
+    [avatar]="user.avatar",
+)

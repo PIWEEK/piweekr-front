@@ -1,3 +1,13 @@
+export const FAKE_USER = {
+    username: "fakeuser",
+    email: "fake@gmail.com",
+    fullName: "Fake User",
+    avatar: {
+        head: 1, body: 2, legs: 3, background: "#FF0000"
+    },
+    token: "XXXX"
+};
+
 export class Avatar {
     head: number;
     body: number;

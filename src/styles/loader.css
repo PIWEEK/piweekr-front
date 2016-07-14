@@ -20,6 +20,7 @@ svg {
     height: 4.9rem;
     transform: rotate(180deg);
     width: 4rem;
+    margin-bottom: 2rem;
 }
 .center-stroke {
     animation: stroke 10s infinite;

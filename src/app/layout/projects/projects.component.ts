@@ -1,5 +1,6 @@
 import {Component, Input} from "@angular/core";
 import { ApiService } from "../../services/api.service";
+import { PublishService } from '../../services/publish.service';
 import {VerticalListComponent} from "../../components/vertical-list/vertical-list.component";
 import {CardContainerComponent} from "../../components/card-container/card-container.component";
 
@@ -7,7 +8,8 @@ import {CardContainerComponent} from "../../components/card-container/card-conta
     selector: "projects-layout",
     templateUrl: "./app/layout/projects/projects.component.html",
     styleUrls: ["./app/layout/projects/projects.component.css"],
-    directives: [VerticalListComponent, CardContainerComponent]
+    directives: [VerticalListComponent, CardContainerComponent],
+    providers: [PublishService]
 })
 
 export class ProjectsComponent {

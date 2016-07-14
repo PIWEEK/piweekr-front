@@ -44,10 +44,8 @@ export class IdeasComponent {
     }
 
     ngOnInit() {
-        console.log(">> Retrieving ideas");
         this._api.ideas.list().subscribe(
             ideas => {
-                console.log(">> Return OK", ideas);
                 this.itemsOriginal = ideas;
                 // Fatest way to clone array
                 this.items = this.itemsOriginal.slice(0);

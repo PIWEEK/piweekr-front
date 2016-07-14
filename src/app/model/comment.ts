@@ -8,11 +8,13 @@ export class Comment {
     content: string;
 
     constructor(data: {uuid?: string,
-                       owner: any,
+                       owner?: any,
                        createdAt?: string,
                        content: string}) {
         this.uuid = data.uuid;
-        this.owner = new User(data.owner);
+        if (data.owner) {
+            this.owner = new User(data.owner);
+        }
         this.createdAt = data.createdAt ? moment(data.createdAt) : moment();
         this.content = data.content;
     }

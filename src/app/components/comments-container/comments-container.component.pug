@@ -1,3 +1,4 @@
+doctype html
 include ../../../mixins
 
 .feedback
@@ -5,6 +6,10 @@ include ../../../mixins
       .reaction(*ngFor='let reaction of reactions | KeysFilter')
         span.emoji([ngClass]='"emoji-" + reaction.key')
         span.counter {{ reaction.value }}
+      reaction-button(
+        *ngIf="session.currentUser",
+        (onReactionSelected)="handleReactionSelected($event)"
+      )
 
     a.comments(href="javascript:void(0)", (click)="handleToggleComments()")
       span 
@@ -12,5 +17,13 @@ include ../../../mixins
       span.counter {{ comments }}
       span.content comentarios
 
-comment-list(*ngIf="showComments", [entity]="entity", [uuid]="uuid")
-comment-input(*ngIf="showComments && session.currentUser", [entity]="entity", [uuid]="uuid")
+comment-list(
+  *ngIf="showComments && (session.currentUser || comments > 0)",
+  [entity]="entity",
+  [uuid]="uuid")
+
+comment-input(
+  *ngIf="showComments && session.currentUser", 
+  [entity]="entity", 
+  [uuid]="uuid",
+  (onCreateComment)="handleCommentCreated($event)")

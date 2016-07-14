@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Comment } from "../../model/comment";
 import { AvatarEditorComponent } from "../avatar-editor/avatar-editor.component";
+import { MomentPipe } from "../../pipes";
 
 const BASE_DIR = './app/components/comment';
 
@@ -8,7 +9,8 @@ const BASE_DIR = './app/components/comment';
     selector: 'comment',
     templateUrl: `${BASE_DIR}/comment.component.html`,
     styleUrls: [`${BASE_DIR}/comment.component.css`],
-    directives: [AvatarEditorComponent]
+    directives: [AvatarEditorComponent],
+    pipes: [MomentPipe]
 })
 
 export class CommentComponent {

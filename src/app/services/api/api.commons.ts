@@ -29,7 +29,7 @@ export class ApiCommons {
 
             const token = this.session.token;
             if (token) {
-                headers['Authorization'] = `Bearer ${token}`;
+                headers['Authorization'] = `Bearer: ${token}`;
             }
 
             const options = {

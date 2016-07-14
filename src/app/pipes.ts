@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import moment from "moment";
 
 @Pipe({ name: 'KeysFilter',  pure: false })
 export class KeysFilter implements PipeTransform {
@@ -13,5 +14,15 @@ export class KeysFilter implements PipeTransform {
             }
         }
         return keys;
+    }
+}
+
+/*
+ * Moment date transform
+ */
+@Pipe({name: 'moment'})
+export class MomentPipe implements PipeTransform {
+    transform(value: moment.Moment): string {
+        return `${value.format('DD/MM/YYYY HH:mm')} (${value.fromNow()})`;
     }
 }

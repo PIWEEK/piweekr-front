@@ -5,7 +5,9 @@ vertical-list(
     (currentItem)="handleSelected($event)"
 )
     +comploader
+
 card-container(
+    entity="projects",
     [items]="items",
     [selectedItem]="selectedItem",
     [owner-menu]="ownerMenu"
