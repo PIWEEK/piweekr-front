@@ -46,7 +46,7 @@ export class ApiCommons {
             return this.http
                 .request(new Request(options))
                 .map(res => res.json())
-                .timeout(10000, new Error('delay exceeded'))
+                //.timeout(10000, new Error('delay exceeded'))
                 //.retry(2)
                 .catch(this.logError);
         } catch (err) {

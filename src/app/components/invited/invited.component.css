@@ -8,3 +8,34 @@
     border-top: 1px solid var(--gray300);
     border-bottom: 1px solid var(--gray300);
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.invited {
+    display: flex;
+}
+
+.label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1em;
+}
+
+user-list {
+    padding: 0;
+    flex-shrink: initial;
+    flex-grow: initial;
+    flex-wrap: nowrap;
+}
+
+.add {
+    @apply --button;
+    @apply --button-action;
+    padding: 0.5rem 0.8rem;
+    margin-left: 0.5rem;
+}

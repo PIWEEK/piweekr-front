@@ -94,11 +94,10 @@ p {
     }
 }
 
-.marketplace-project-participants,
 .user-list {
     align-content: flex-start;
     display: flex;
-    flex-basis: 3vh;
+    flex-basis: 9vh;
     flex-grow: 1;
     flex-shrink: 1;
     flex-wrap: wrap;

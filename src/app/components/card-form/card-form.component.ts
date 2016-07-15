@@ -28,7 +28,6 @@ export class CardFormComponent {
 
     ngOnInit() {
         this.userList = this.api.users.list();
-        console.log(this.userList);
     }
 
     doStuff() {
