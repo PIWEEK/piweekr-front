@@ -39,13 +39,13 @@ export class ApiCommons {
                 headers: new Headers(headers)
             };
 
-            if (data) {
+            if (data && data !== '') {
                 options.body = (typeof data === 'string') ? data : JSON.stringify(data);
             }
 
             return this.http
                 .request(new Request(options))
-                .map(res => res.json())
+                .map(res => (res._body) ? res.json() : {})
                 //.timeout(10000, new Error('delay exceeded'))
                 //.retry(2)
                 .catch(this.logError);

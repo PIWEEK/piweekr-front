@@ -45,6 +45,14 @@ export class IdeaApiService extends ApiCommons {
                 json => json.map(v => new User(v.user))
             );
     }
+
+    invite(ideaId, username): Observable<User[]> {
+        const payload = {
+            invitedUsernames: [username]
+        };
+        return this.post("ideaInvited", [ideaId], payload);
+    }
+
 }
 
 

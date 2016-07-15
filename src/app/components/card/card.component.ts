@@ -79,6 +79,9 @@ export class CardComponent {
     }
 
     addUser(user) {
-        this.card.users.push(user);
+        this.api.ideas.invite(this.card.uuid, user.username).subscribe(
+            result => this.card.users.push(user),
+            err => console.error(err)
+        )
     }
 }
