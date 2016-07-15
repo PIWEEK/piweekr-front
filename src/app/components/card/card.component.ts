@@ -50,7 +50,7 @@ export class CardComponent {
                 res => {
                     this.startEditing();
                 }
-            )
+            );
     }
 
     startEditing() {

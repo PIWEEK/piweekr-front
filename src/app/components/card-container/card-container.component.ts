@@ -45,6 +45,10 @@ export class CardContainerComponent {
         let ELEMENT = this.elementRef.nativeElement;
         ELEMENT = ELEMENT.querySelector(`[data-card-id="${id}"]`);
 
+        if (!ELEMENT) {
+            return;
+        }
+
         let newPosition = window.scrollY + ELEMENT.getBoundingClientRect().top;
         newPosition -= this.headerHeight;
 

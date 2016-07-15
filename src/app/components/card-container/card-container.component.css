@@ -30,3 +30,19 @@ button {
         width: 2rem;
     }
 }
+
+.no-result {
+    text-align: center;
+
+    & .title {
+        color: var(--gray800);
+        font-size: var(--font-large);
+        font-weight: var(--bold);
+        margin-bottom: 1rem;
+    }
+
+    &. img {
+        max-width: 500px;
+        width: 100%;
+    }
+}
