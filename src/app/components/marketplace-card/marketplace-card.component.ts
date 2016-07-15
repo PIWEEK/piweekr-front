@@ -34,7 +34,19 @@ export class MarketplaceCardComponent {
         }
     }
 
+    joinInterested() {
+        this.card.usersInterested.push(this.session.currentUser);
+        // TODO ADD TO THE INTERESTED LIST IN API NOT IN PARTICIPANTS
+        this.api.projects.join(this.card.uuid).subscribe(
+            result => {
+                console.log(result);
+            },
+            err => console.log(">> ERR ", err)
+        );
+    }
+
     joinProject() {
+        this.card.usersParticipant.push(this.session.currentUser);
         this.api.projects.join(this.card.uuid).subscribe(
             result => {
                 console.log(result);

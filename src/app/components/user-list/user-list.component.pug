@@ -1,5 +1,5 @@
-h2.intitle Participants
-.list.participants-list
+h2.intitle(*ngIf="participants.length") Participants
+.list.participants-list(*ngIf="participants.length")
     avatar-editor(
         *ngFor="let participant of participants",
         editable="false",
@@ -7,8 +7,8 @@ h2.intitle Participants
         [avatar]="participant.avatar",
     )
 
-h2.intitle Interesteds
-.list.interesteds-list
+h2.intitle(*ngIf="interesteds.length") Interesteds
+.list.interesteds-list(*ngIf="interesteds.length")
     avatar-editor(
         *ngFor="let interested of interesteds",
         editable="false",
