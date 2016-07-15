@@ -6,4 +6,5 @@ import {Component, Input} from "@angular/core";
     styleUrls: ["./app/layout/winners/winners.component.css"],
 })
 
-export class WinnersComponent {}
+export class WinnersComponent {
+}
