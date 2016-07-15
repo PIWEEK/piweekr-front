@@ -27,7 +27,8 @@
     margin-bottom: 1em;
 }
 
-user-list {
+.user-list {
+    display: flex;
     padding: 0;
     flex-shrink: initial;
     flex-grow: initial;
@@ -45,4 +46,8 @@ user-list {
 
 p {
     margin: 0;
+}
+
+avatar-editor {
+    margin-right: 0.5em;
 }
