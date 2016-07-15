@@ -16,6 +16,10 @@ header {
     display: flex;
 }
 
+header avatar-editor {
+    border-radius: 0;
+}
+
 .title {
     flex-grow: 1;
     font-size: var(--font-large);

@@ -1,22 +1,25 @@
 section(*ngIf="session.currentUser")
     header
         .title Avatar
-        avatar-editor(
-            editable="false",
-            avatar-type="small-head",
-            [head]="session.currentUser.avatar.head",
-            [body]="session.currentUser.avatar.body",
-            [legs]="session.currentUser.avatar.legs",
-            [background]="session.currentUser.avatar.background"
-        )
+        .avatar
+            avatar-editor(
+                editable="false",
+                avatar-type="small-head",
+                [head]="session.currentUser.avatar.head",
+                [body]="session.currentUser.avatar.body",
+                [legs]="session.currentUser.avatar.legs",
+                [background]="session.currentUser.avatar.background"
+            )
     .content
-        avatar-editor(
-            [editable]="true",
-            [(head)]="session.currentUser.avatar.head",
-            [(body)]="session.currentUser.avatar.body",
-            [(legs)]="session.currentUser.avatar.legs",
-            [background]="session.currentUser.avatar.background"
-        )
+        .wrapper
+            .avatar
+                avatar-editor(
+                    [editable]="true",
+                    [(head)]="session.currentUser.avatar.head",
+                    [(body)]="session.currentUser.avatar.body",
+                    [(legs)]="session.currentUser.avatar.legs",
+                    [background]="session.currentUser.avatar.background"
+                )
         .form
             form(
                 method="post",

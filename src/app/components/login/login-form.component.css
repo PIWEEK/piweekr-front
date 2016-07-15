@@ -43,7 +43,7 @@ button {
     color: var(--error-text);
     margin-top: 1rem;
     padding: 1rem;
-    
+
     & p {
         margin: 0;
     }

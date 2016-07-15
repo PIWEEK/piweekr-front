@@ -20,10 +20,11 @@ nav.nav-bar
     ) Marketplace
 
     .login(*ngIf="session.currentUser")
-        avatar-editor(
-            editable="false",
-            avatar-type="small-head",
-            [avatar]="session.currentUser.avatar")
+        .avatar
+            avatar-editor(
+                editable="false",
+                avatar-type="small-head",
+                [avatar]="session.currentUser.avatar")
 
         a(
             [routerLink]="['/profile']",
