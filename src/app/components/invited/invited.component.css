@@ -16,6 +16,7 @@
 
 .invited {
     display: flex;
+    align-items: center;
 }
 
 .label {
@@ -38,4 +39,10 @@ user-list {
     @apply --button-action;
     padding: 0.5rem 0.8rem;
     margin-left: 0.5rem;
+    // width: 35px;
+    // height: 35px;
+}
+
+p {
+    margin: 0;
 }

@@ -1,6 +1,8 @@
-.container(*ngIf='!inviteds.length') No hay ningún invitado
-.container(*ngIf='inviteds.length') 
+.container
   span.label Invitados
-  .invited
-    user-list([users]="inviteds")
-    button.add +
+  .invited(*ngIf='!editing') 
+    user-list(*ngIf="inviteds.length", [users]="inviteds")
+    p(*ngIf="!inviteds.length") No hay ningún invitado
+    button.add((click)="startEditing()") +
+
+  user-autocomplete(*ngIf="editing", (onSelectUser)="addUser($event)")

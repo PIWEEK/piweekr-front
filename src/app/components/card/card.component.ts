@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 
 import { CommentsContainerComponent } from '../comments-container/comments-container.component';
 import { AvatarEditorComponent } from "../avatar-editor/avatar-editor.component";
+import { UserAutocompleteComponent } from "../user-autocomplete/user-autocomplete.component";
 import { InvitedComponent } from '../invited/invited.component';
 import { ForkComponent } from '../fork/fork.component';
 import { WatchComponent } from '../watch/watch.component';
@@ -75,5 +76,9 @@ export class CardComponent {
         this.editing = false;
         this.card.title = this.oldValues.title;
         this.card.description = this.oldValues.description;
+    }
+
+    addUser(user) {
+        this.card.users.push(user);
     }
 }
