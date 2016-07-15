@@ -16,6 +16,7 @@ import { CardContainerComponent } from "../../components/card-container/card-con
 
 export class IdeasComponent {
     @Input() selectedItem: Object;
+    @Input() loadedXHR: boolean;
 
     type: string = 'Ideas';
     items = [];
@@ -26,10 +27,15 @@ export class IdeasComponent {
 
     constructor(
         private _api: ApiService,
-        public publishService: PublishService) {
+        public publishService: PublishService
+    ) {
+        this.loadedXHR = false;
         this.publishService.publish$
             .filter(p => p.type === "filter")
-            .subscribe(p => this.filtersChange(p.item));
+            .subscribe(p => {
+                this.filtersChange(p.item);
+                this.loadedXHR = true;
+            });
 
         this.ownerMenu = [
             {
