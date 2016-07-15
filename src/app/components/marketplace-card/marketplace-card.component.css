@@ -82,7 +82,6 @@ p {
     }
     & li {
         display: flex;
-        align-items: center;
         line-height: 1.5;
     }
     & .icon {

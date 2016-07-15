@@ -2,7 +2,7 @@ doctype html
 include ../../../mixins
 
 header
-    h1.title {{card.title}} l:{{isUserLoggedIn}} i:{{isInterested}} p:{{isParticipant}} o:{{isOwner}}
+    h1.title {{card.title}}
     button.join-project(
         *ngIf="isUserLoggedIn && isInterested && !isParticipant && !isOwner",
         type="submit",
