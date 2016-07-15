@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { User } from "../../model/User";
 import { ApiService } from "../../services/api.service";
 import { PublishService } from '../../services/publish.service';
 import { VerticalListComponent } from "../../components/vertical-list/vertical-list.component";
@@ -56,14 +57,18 @@ export class IdeasComponent {
             .list()
             .flatMap(ideas => Observable.of(...ideas))
             .flatMap(
-                idea => this._api.ideas
-                    .fetchInvited(idea.uuid)
-                    .catch(Observable.of([]))
-                    .map(users => {
-                        idea.users = users;
-                        return idea;
-                    })
-                    )
+                idea => {
+                    if (!idea.isPublic) {
+                        return this._api.ideas
+                            .fetchInvited(idea.uuid)
+                            .map(users => {
+                                idea.users = users;
+                                return idea;
+                            });
+                    } else {
+                        return Observable.of(idea);
+                    }
+                })
             .toArray()
             .subscribe(
                 ideas => {
