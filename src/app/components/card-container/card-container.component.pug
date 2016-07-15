@@ -26,6 +26,7 @@ section.card-container
         [owner-menu]="ownerMenu"
     )
         +comploader
-    .no-result(*ngIf='loadedXHR && !itemsList.length')
+    p {{ loadedXHR | json }}
+    .no-result(*ngIf='loaded && !itemsList.length')
         .title No hay resultados
         img(src='http://i.giphy.com/O38dU2kkQ9sWc.gif', title='No hay resultados')

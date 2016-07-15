@@ -34,7 +34,6 @@ export class IdeasComponent {
             .filter(p => p.type === "filter")
             .subscribe(p => {
                 this.filtersChange(p.item);
-                this.loadedXHR = true;
             });
 
         this.ownerMenu = [
@@ -73,6 +72,7 @@ export class IdeasComponent {
             .toArray()
             .subscribe(
                 ideas => {
+                    this.loadedXHR = true;
                     console.log(ideas);
                     this.itemsOriginal = ideas;
                     // Fatest way to clone array

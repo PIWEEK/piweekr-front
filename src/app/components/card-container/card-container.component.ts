@@ -23,6 +23,7 @@ export class CardContainerComponent {
     @Input() selectedItem: string;
     @Input('owner-menu') ownerMenu: Array<Object>;
     @Input() editTopic: Observable<string>;
+    @Input() loaded: boolean;
 
     private headerHeight: number = 120;
     private filterOptions: Array<Object>;
