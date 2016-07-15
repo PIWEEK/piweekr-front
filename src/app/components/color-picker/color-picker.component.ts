@@ -15,12 +15,10 @@ export class ColorPickerComponent {
     colors: Array<string>;
 
     constructor() {
-        this.colors = [
-            'rgb(153, 153, 153)',
-            'rgb(255, 138, 132)',
-            'rgb(32, 74, 135)',
-            'rgb(102, 153, 0)',
-            'rgb(239, 41, 41)',
+        this.colors = ["#FC8EAC", "#A5694F", "#002e33", "#67CF00",
+            "#71A6D2", "#FFF8E7", "#4B0082", "#007000", "#40826D",
+            "#708090", "#761CEC", "#CC0000",
+            "#FFCC00", "#FFFF00", "#B6DA55", "#2099DB"
         ];
     }
 
