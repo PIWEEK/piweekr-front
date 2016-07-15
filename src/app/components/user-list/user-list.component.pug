@@ -1,6 +1,17 @@
-avatar-editor(
-    *ngFor="let user of users",
-    editable="false",
-    avatar-type="small-head",
-    [avatar]="user.avatar",
-)
+h2.intitle Participants
+.list.participants-list
+    avatar-editor(
+        *ngFor="let participant of participants",
+        editable="false",
+        avatar-type="small-head",
+        [avatar]="participant.avatar",
+    )
+
+h2.intitle Interesteds
+.list.interesteds-list
+    avatar-editor(
+        *ngFor="let interested of interesteds",
+        editable="false",
+        avatar-type="small-head",
+        [avatar]="interested.avatar",
+    )

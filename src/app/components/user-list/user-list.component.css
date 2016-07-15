@@ -3,9 +3,29 @@
 :host {
     align-content: flex-start;
     display: flex;
-    flex-basis: 3vh;
+    flex-basis: 9vh;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 1rem;
+}
+
+.intitle {
+    font-weight: var(--normal);
+    font-size: var(--font-medium);
+    color: var(--gray600);
+    margin-top: 0;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.participants-list {
+    margin-bottom: 1rem;
+}
+
+.interesteds-list {
+    opacity: .5;
 }

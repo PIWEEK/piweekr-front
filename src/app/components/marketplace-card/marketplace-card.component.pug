@@ -42,7 +42,8 @@ header
 
     user-list(
         *ngIf="card.usersInterested.length",
-        [users]="card.usersInterested"
+        [interesteds]="card.usersInterested",
+        [participants]="card.usersParticipant"
     )
     p.user-list(
         *ngIf="!card.usersInterested.length"
