@@ -32,9 +32,9 @@ header
 .desc.is-editing(*ngIf="editing") 
   textarea([(ngModel)]="card.description", name="description")
 
-//p {{ entity }} {{ entity === 'ideas' }} 
-//p {{ card | json}}
-invited(*ngIf="entity === 'ideas' && !card.isPublic", [inviteds]="card.users")
+invited(*ngIf="entity === 'ideas' && !card.isPublic", 
+        [inviteds]="card.users", 
+        (onSelectUser)="addUser($event)")
 
 comments-container(
     [entity]="entity",

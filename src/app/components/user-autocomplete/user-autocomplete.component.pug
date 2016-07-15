@@ -1,0 +1,38 @@
+doctype html
+include ../../../mixins
+
+input(
+    type="text",
+    placeholder="Invite users",
+    name="invite-user",
+    (keyup)="doStuff()",
+    [(ngModel)]="inviteUser"
+)
+
+.display-users(*ngIf="filteredUsers && filteredUsers.length && displayUserInviteList")
+    .single-user(
+        *ngFor="let user of filteredUsers",
+        (click)="onInviteUser(user)"
+    )
+        avatar-editor(
+            editable="false",
+            avatar-type="small-head",
+            [avatar]="user.avatar"
+        )
+        span.single-user-name {{ user.fullName }}
+
+.invited-users-wrapper(*ngIf="invitedUsers")
+    .invited-users-single(
+        *ngFor="let invitedUser of invitedUsers",
+    )
+        avatar-editor(
+            editable="false",
+            avatar-type="small-head",
+            [avatar]="invitedUser.avatar"
+        )
+        span.single-invited-name {{ invitedUser.fullName }}
+        a.remove-invite(
+            href="javascript:void(0)",
+            (click)="onRemoveUser(invitedUser)"
+        )
+            +icon('icon-close')

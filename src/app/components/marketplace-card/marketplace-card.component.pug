@@ -2,7 +2,7 @@ doctype html
 include ../../../mixins
 
 header
-    h1.title {{card.title}} l:{{isUserLoggedIn}} i:{{isInterested}} p:{{isParticipant}} o:{{isOwner}}
+    h1.title {{card.title}}
     button.join-project(
         *ngIf="isUserLoggedIn && isInterested && !isParticipant && !isOwner",
         type="submit",
@@ -11,7 +11,7 @@ header
     button.interest-project(
         *ngIf="isUserLoggedIn && !isInterested && !isParticipant && !isOwner",
         type="submit",
-        (click)="joinProject()"
+        (click)="joinInterested()"
     ) ¡Interesante!
 .marketplace-project-inner
     .marketplace-project-owner(
@@ -41,10 +41,10 @@ header
         p.inactive(*ngIf="!card.technologies.length") Nada por aquí.
 
     user-list(
-        *ngIf="card.usersInterested.length",
+        *ngIf="card.usersInterested.length || card.usersParticipant.length",
         [interesteds]="card.usersInterested",
         [participants]="card.usersParticipant"
     )
     p.user-list(
-        *ngIf="!card.usersInterested.length"
+        *ngIf="!card.usersInterested.length && !card.usersParticipant.length"
     ) Ey, parece que este proyecto se va a hacer un Iván!
