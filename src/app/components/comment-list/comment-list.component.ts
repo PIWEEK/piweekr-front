@@ -23,7 +23,6 @@ export class CommentListComponent {
     constructor(private api: ApiService) {}
 
     ngOnInit() {
-        console.log(">>> ngOnInit: " + this.entity);
         this.api
             .comments
             .list(this.entity, this.uuid)

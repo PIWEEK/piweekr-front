@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 import { ApiService } from "../../services/api.service";
 import { PublishService } from '../../services/publish.service';
 import { VerticalListComponent } from "../../components/vertical-list/vertical-list.component";
@@ -51,14 +52,28 @@ export class IdeasComponent {
     }
 
     ngOnInit() {
-        this._api.ideas.list().subscribe(
-            ideas => {
-                this.itemsOriginal = ideas;
-                // Fatest way to clone array
-                this.items = this.itemsOriginal.slice(0);
-            },
-            err => console.log(err)
-        );
+        this._api.ideas
+            .list()
+            .flatMap(ideas => Observable.of(...ideas))
+            .flatMap(
+                idea => this._api.ideas
+                    .fetchInvited(idea.uuid)
+                    .catch(Observable.of([]))
+                    .map(users => {
+                        idea.users = users;
+                        return idea;
+                    })
+                    )
+            .toArray()
+            .subscribe(
+                ideas => {
+                    console.log(ideas);
+                    this.itemsOriginal = ideas;
+                    // Fatest way to clone array
+                    this.items = this.itemsOriginal.slice(0);
+                },
+                err => console.error(err)
+            );
     }
 
     filtersChange(newFilters) {

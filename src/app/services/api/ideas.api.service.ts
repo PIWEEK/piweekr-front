@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ApiCommons } from './api.commons';
 import { Idea } from '../../model/idea';
+import { User } from '../../model/user';
 import { UserSessionService } from '../user-session.service';
 
 @Injectable()
@@ -36,6 +37,13 @@ export class IdeaApiService extends ApiCommons {
 
     update(ideaId: string, values: {title: string, description: string}): Observable<Idea> {
         return this.patch("ideaDetail", [ideaId], values);
+    }
+
+    fetchInvited(ideaId: string): Observable<User[]> {
+        return this.get("ideaInvited", [ideaId])
+            .map(
+                json => json.map(v => new User(v.user))
+            );
     }
 }
 
